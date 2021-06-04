@@ -59,13 +59,13 @@ let content_url = './content.json';
 let content_response_promise = fetch(content_url);
 
 const handle_content_json = function (content) {
-	console.log('our content has loaded', content);
+	//console.log('our content has loaded', content);
 	app.content = content;
 	app.is_content_loading = false;
 };
 
 const handle_content_response = function (response) {
-	console.log('The response from loading content.json', response);
+	//console.log('The response from loading content.json', response);
 	let json_promise = response.json();
 	json_promise.then(handle_content_json);
 };

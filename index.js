@@ -14,21 +14,49 @@ How to load content from content.json:
 	:key="blog_post.id"
 >
 	<a
-	:href="'index.html#' + blog_post.id"
+	:href="blog_post.id"
 >{{ blog_post.title }}</a>
 </div>
 </div>
 */
+const props_for_root_router_view = {
+	content: {
+		type: Array,
+		required: true,
+	},
+	is_content_loading: {
+		type: Boolean,
+		required: true,
+	},
+};
 
 const Home = {
+	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
-			This is the Home page.
+			<div
+				v-if="is_content_loading"
+			>loading...</div>
+			<div
+				v-else
+				class="blog-list"
+			>
+				<div
+					class="blog-item"
+					v-for="blog_post of content"
+					:key="blog_post.id"
+				>
+					<a
+					:href="blog_post.id"
+				>{{ blog_post.title }}</a>
+				</div>
+			</div>
 		</div>
 	`
 };
 
 const Games = {
+	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
 			This is the Games page.
@@ -37,6 +65,7 @@ const Games = {
 };
 
 const Toons = {
+	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
 			This is the Toons page.
@@ -45,6 +74,7 @@ const Toons = {
 };
 
 const Sbemails = {
+	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
 			This is the Sbemails page.
@@ -53,6 +83,7 @@ const Sbemails = {
 };
 
 const Yodeling = {
+	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
 			This is the Yodeling page.
@@ -61,6 +92,7 @@ const Yodeling = {
 };
 
 const Yodeling2 = {
+	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
 			This is the Yodeling2 page.
@@ -87,7 +119,25 @@ router.afterEach((to, from) => {
 	Vue.nextTick(() => {
 		document.title = to.meta.title || DEFAULT_TITLE;
 	})
-})
+});
+
+Vue.component('menu-item', {
+	props: {
+		data: {
+			type: Object,
+			required: true,
+		},
+	},
+	template: `
+		<span 
+			class="menu-item"
+		>
+			<router-link
+				:to="data.id"
+			>{{ data.label }}</router-link>
+		</span>
+	`
+});
 
 let app = new Vue({
 	router: router,
@@ -110,18 +160,17 @@ let app = new Vue({
 				<h1>This is the Title of the Page</h1>
 			</div>
 			<div class="menu" id="menu">
-				<span 
-					class="menu-item"
+				<menu-item
 					v-for="item of menu_list"
 					:key="item.id"
-				>
-					<router-link
-						:to="item.id"
-					>{{ item.label }}</router-link>
-				</span>
+					:data="item"
+				></menu-item>
 			</div>
 			<div class="body" id="body">
-				<router-view></router-view>
+				<router-view
+					:content="content"
+					:is_content_loading="is_content_loading"
+				></router-view>
 			</div>
 			<div class="footer" id="footer">
 				Feet go Here.

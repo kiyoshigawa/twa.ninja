@@ -1,4 +1,96 @@
+Vue.use(VueRouter);
+/*
+How to load content from content.json:
+<div
+	v-if="is_content_loading"
+>loading...</div>
+<div
+	v-else
+	class="blog-list"
+>
+	<div
+		class="blog-item"
+		v-for="blog_post of content"
+	:key="blog_post.id"
+>
+	<a
+	:href="'index.html#' + blog_post.id"
+>{{ blog_post.title }}</a>
+</div>
+</div>
+*/
+
+const Home = {
+	template: `
+		<div class="body" id="body">
+			This is the Home page.
+		</div>
+	`
+};
+
+const Games = {
+	template: `
+		<div class="body" id="body">
+			This is the Games page.
+		</div>
+	`
+};
+
+const Toons = {
+	template: `
+		<div class="body" id="body">
+			This is the Toons page.
+		</div>
+	`
+};
+
+const Sbemails = {
+	template: `
+		<div class="body" id="body">
+			This is the Sbemails page.
+		</div>
+	`
+};
+
+const Yodeling = {
+	template: `
+		<div class="body" id="body">
+			This is the Yodeling page.
+		</div>
+	`
+};
+
+const Yodeling2 = {
+	template: `
+		<div class="body" id="body">
+			This is the Yodeling2 page.
+		</div>
+	`
+};
+
+const routes = [
+	{ path: '/home', component: Home },
+	{ path: '/games', component: Games },
+	{ path: '/toons', component: Toons },
+	{ path: '/sbemails', component: Sbemails },
+	{ path: '/yodeling', component: Yodeling },
+	{ path: '/yodeling2', component: Yodeling2 },
+];
+
+const router = new VueRouter({
+	routes: routes,
+});
+
+const DEFAULT_TITLE = 'This is a Title';
+
+router.afterEach((to, from) => {
+	Vue.nextTick(() => {
+		document.title = to.meta.title || DEFAULT_TITLE;
+	})
+})
+
 let app = new Vue({
+	router: router,
 	el: '#app',
 	data: {
 		menu_list: [
@@ -23,29 +115,13 @@ let app = new Vue({
 					v-for="item of menu_list"
 					:key="item.id"
 				>
-					<a 
-						:href="'index.html#' + item.id"
-					>{{ item.label }}</a>
+					<router-link
+						:to="item.id"
+					>{{ item.label }}</router-link>
 				</span>
 			</div>
 			<div class="body" id="body">
-				<div
-					v-if="is_content_loading"
-				>loading...</div>
-				<div
-					v-else
-					class="blog-list"
-				>
-					<div 
-						class="blog-item"
-						v-for="blog_post of content"
-						:key="blog_post.id"
-					>
-						<a 
-							:href="'index.html#' + blog_post.id"
-						>{{ blog_post.title }}</a>
-					</div>
-				</div>
+				<router-view></router-view>
 			</div>
 			<div class="footer" id="footer">
 				Feet go Here.

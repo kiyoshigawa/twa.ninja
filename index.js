@@ -87,6 +87,22 @@ const BlogPost = {
 						/>
 					</div>
 				</div>
+				<div 
+					class="post-files"
+					v-if="post.file_list && post.file_list.length"
+				>
+					<h3>File Downloads</h3>
+					<div 
+						class="post-file"
+						v-for="file of post.file_list"
+						:key="file.filename"
+					>
+						<a 
+							:href="file.filename"
+							target="_blank"
+						>{{file.title}}</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	`

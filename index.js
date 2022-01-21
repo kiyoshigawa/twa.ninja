@@ -71,6 +71,22 @@ const BlogPost = {
 				<div
 					v-html="post.body"
 				></div>
+				<div 
+					class="post-images"
+					v-if="post.image_list && post.image_list.length"
+				>
+					<div 
+						class="post-image"
+						v-for="image of post.image_list"
+						:key="image.filename"
+					>
+						<img 
+							:src="image.filename"
+							:title="image.title"
+							:alt="image.title"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	`
@@ -122,6 +138,8 @@ const Yodeling2 = {
 };
 
 const routes = [
+	{ path: '', component: Home },
+	{ path: '/', component: Home },
 	{ path: '/home', component: Home },
 	{ path: '/games', component: Games },
 	{ path: '/toons', component: Toons },
@@ -132,7 +150,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-	mode: 'history',
+	mode: 'hash',
 	routes: routes,
 });
 

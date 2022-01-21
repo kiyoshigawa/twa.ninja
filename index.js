@@ -1,5 +1,9 @@
 Vue.use(VueRouter);
 
+const jsonClone = function (data) {
+	return JSON.parse(JSON.stringify(data));
+};
+
 const props_for_root_router_view = {
 	content: {
 		type: Array,
@@ -36,28 +40,101 @@ const Home = {
 	`
 };
 
-const BlogPost = {
+
+const BlogPostEditor = {
+	name: 'blog-post-editor',
 	props: {
-		...props_for_root_router_view, // 'Spread' Operator
-		id: {
-			type: String,
+		post: {
+			type: Object,
 			required: true,
 		},
 	},
+	data() {
+		return {
+			mutablePost: jsonClone(this.post),
+		}
+	},
+	methods: {
+		handleSubmit(submitEvent) {
+			submitEvent.preventDefault();
+			const mutablePostCopy = jsonClone(this.mutablePost);
+			console.log('The form was submit!', mutablePostCopy);
+			this.$emit('post', mutablePostCopy);
+		},
+	},
+	template: `
+		<div
+			class="blog-post-editor"
+		>
+			<form
+				@submit="handleSubmit"
+			>
+				<div class="editor-field">
+					<label>
+						<span>Title</span>
+						<input
+							type="text"
+							v-model="mutablePost.title"
+						/>
+					</label>
+				</div>
+				<div class="editor-field">
+					<label>
+						<span>Title</span>
+						<textarea
+							type="text"
+							v-model="mutablePost.body"
+							cols="80"
+							rows="10"
+						/>
+					</label>
+				</div>
+				<div class="editor-field">
+					<input type="submit" />
+				</div>
+			</form>
+		</div>
+	`
+};
+
+const BlogPost = {
+	components: {
+		BlogPostEditor: BlogPostEditor
+	},
+	props: props_for_root_router_view,
+	data() {
+		return {
+			postPreview: null
+		};
+	},
 	computed: {
-		post(){
+		id() {
+			return this.$route.params.id;
+		},
+		isEditorMode() {
+			// !! turns truthy or falsey into exactly true or false
+			return !!this.$route.query.editor_mode;
+		},
+		post() {
 			const id = this.id;
 			const is_content_loading = this.is_content_loading;
-			const result = is_content_loading
+			const content_for_404_page = {
+				title: "404 Page not found",
+				body: "<p>We don't have that. You're clearly trying to hack me. Please stop, I have nothing of value.</p>",
+			}
+			const page_content = is_content_loading
 				? {}
 				: this.content.find(function(blog_post){
 					return blog_post.id === id;
-				}) || {
-					title: "404 Page not found",
-					body: "<p>We don't have that. You're clearly trying to hack me. Please stop, I have nothing of value.</p>",
-				};
-			return result;
+				}) || content_for_404_page;
+			return this.postPreview || page_content;
 		}
+	},
+	methods: {
+		ingestPostPreview(postPreview) {
+			console.log("ingestPostPreview: postPreview", postPreview);
+			this.postPreview = postPreview;
+		},
 	},
 	template: `
 		<div 
@@ -67,7 +144,7 @@ const BlogPost = {
 				v-if="is_content_loading"
 			>loading...</div>
 			<div
-				v-else
+				v-if="!is_content_loading"
 				class="blog-post-content"
 			>
 				<h1>{{ post.title }}</h1>
@@ -107,6 +184,11 @@ const BlogPost = {
 					</div>
 				</div>
 			</div>
+			<blog-post-editor
+				v-if="!is_content_loading && isEditorMode"
+				:post="post"
+				@post="ingestPostPreview"
+			></blog-post-editor>
 		</div>
 	`
 }
@@ -165,7 +247,7 @@ const routes = [
 	{ path: '/sbemails', component: Sbemails },
 	{ path: '/yodeling', component: Yodeling },
 	{ path: '/yodeling2', component: Yodeling2 },
-	{ path: '/blog/:id', component: BlogPost, props: true },
+	{ path: '/blog/:id', component: BlogPost },
 ];
 
 const router = new VueRouter({

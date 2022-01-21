@@ -52,7 +52,10 @@ const BlogPost = {
 				? {}
 				: this.content.find(function(blog_post){
 					return blog_post.id === id;
-				});
+				}) || {
+					title: "404 Page not found",
+					body: "<p>We don't have that. You're clearly trying to hack me. Please stop, I have nothing of value.</p>",
+				};
 			return result;
 		}
 	},

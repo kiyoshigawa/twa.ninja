@@ -11,8 +11,16 @@ body {
 	color: #DDD;
 	background-color: #111;
 	padding: 16px;
-	font-family: Verdana, sans-serif;
+	font-family: 'Helvetica Neue', 'Arial Nova', sans-serif;
 	font-size: 16px;
+}
+
+.content-holder {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+	background-color: #222;
 }
 
 #header {
@@ -26,6 +34,18 @@ body {
 	text-align: center;
 }
 
+.menu-item {
+	margin: 8px;
+	padding: 8px;
+	color: #222;
+	font-weight: bold;
+	background-color: #CCC;
+}
+
+.menu-item a {
+	text-decoration: none;
+}
+
 h1, h2, h3, p {
 	padding-bottom: 16px;
 }
@@ -35,12 +55,23 @@ ul, ol {
 	padding-bottom: 16px;
 }
 
-.post-image img {
+.post-body-image-holder, .post-image-holder {
+	width: 100%
+}
+
+.post-body-image, .post-image {
 	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: solid #222 2px;
 	max-width: 100%;
 }
 
-.post-image + .post-image {
+.post-body-image:hover, .post-image:hover {
+	border: solid #ddd 2px;
+}
+
+.post-image-holder + .post-image-holder {
 	margin-top: 8px;
 }
 
@@ -69,18 +100,66 @@ ul, ol {
 
 .blog-post-content img {
 	max-width: 100%;
+	max-height: 600px;
 }
 
-.menu-item {
-	margin: 0 8px 0 8px;
+.blog-item-holder {
+	max-width: 100%;
+	margin: 8px;
 	padding: 8px;
-	color: #222;
-	font-weight: bold;
-	background-color: #CCC;
+	border-radius: 8px;
+	background-color: rgba(255,255,255,0.1);
 }
 
-.menu-item a {
+.blog-item-holder:hover {
+	background-color: rgba(255,255,255,0.2);
+}
+
+.blog-item-link {
+	text-align: center;
 	text-decoration: none;
+}
+
+.blog-item-title {
+	font-size: 24px;
+}
+
+.blog-item-image {
+	display: block;
+	max-height: 300px;
+	max-width: 300px;
+	padding: 8px;
+}
+
+.blog-item-image img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.blog-item-blurb-holder {
+	text-align: left;
+	display: flex;
+	max-height: 100%;
+	max-width: 100%;
+	border-radius: 8px;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.blog-item-blurb {
+	padding: 8px;
+	max-height: 240px;
+	overflow-clip: 240px;
+	max-height:200px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	mask-image: linear-gradient(
+			rgba(221, 221, 221, 1.0) 0%,
+			rgba(221, 221, 221, 1.0) 60%,
+			rgba(221, 221, 221, 0.7) 70%,
+			rgba(221, 221, 221, 0.5) 80%,
+			rgba(221, 221, 221, 0.2) 80%,
+			rgba(221, 221, 221, 0.0) 100%
+	);
 }
 
 #body {
@@ -89,8 +168,9 @@ ul, ol {
 }
 
 #footer {
-	background-color: #222;
+	font-size: 12px;
 	padding: 8px;
+	text-align: center;
 }
 
 h1 {

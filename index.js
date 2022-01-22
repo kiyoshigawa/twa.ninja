@@ -15,31 +15,18 @@ const props_for_root_router_view = {
 	},
 };
 
-const Home = {
+const About = {
 	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
-			<div
-				v-if="is_content_loading"
-			>loading...</div>
-			<div
-				v-else
-				class="blog-list"
-			>
-				<div
-					class="blog-item"
-					v-for="blog_post of content"
-					:key="blog_post.id"
-				>
-					<router-link
-						:to="'/blog/' + blog_post.id"
-					>{{ blog_post.title }}</router-link>
-				</div>
+			<div class="content">
+				<h1>About Tim</h1>
+				<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="blog">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
+				<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer fo 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently. There's a <a href="I haven't done this yet">blog post</a> that covers the general history of the Utah hackerspaces as I remember it.</p>
 			</div>
 		</div>
 	`
 };
-
 
 const BlogPostEditor = {
 	name: 'blog-post-editor',
@@ -124,9 +111,9 @@ const BlogPost = {
 			}
 			const page_content = is_content_loading
 				? {}
-				: this.content.find(function(blog_post){
-					return blog_post.id === id;
-				}) || content_for_404_page;
+				: this.content.find(function (blog_post) {
+				return blog_post.id === id;
+			}) || content_for_404_page;
 			return this.postPreview || page_content;
 		}
 	},
@@ -155,17 +142,23 @@ const BlogPost = {
 					class="post-images"
 					v-if="post.image_list && post.image_list.length"
 				>
-					<div 
-						class="post-image"
-						v-for="image of post.image_list"
-						:key="image.filename"
-					>
-						<img 
-							:src="image.filename"
-							:title="image.title"
-							:alt="image.title"
-						/>
-					</div>
+						<div 
+							class="post-image-holder"
+							v-for="image of post.image_list"
+							:key="image.filename"
+						>
+							<a 
+								class="image-link"
+								:href="image.filename"
+							>
+								<img 
+									class="post-image"
+									:src="image.filename"
+									:title="image.title"
+									:alt="image.title"
+								/>
+							</a>
+						</div>
 				</div>
 				<div 
 					class="post-files"
@@ -193,61 +186,71 @@ const BlogPost = {
 	`
 }
 
-const Games = {
+const Blog = {
 	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
-			This is the Games page.
+			<div
+				v-if="is_content_loading"
+			>loading...</div>
+			<div
+				v-else
+				class="blog-list"
+			>
+				<div
+					class="blog-item"
+					v-for="blog_post of content"
+					:key="blog_post.id"
+				>
+					<div class="blog-item-holder">
+						<router-link
+							class = "blog-item-link"
+							:to="'/blog/' + blog_post.id"
+						>
+							<h2 class="blog-item-title">{{ blog_post.title }}</h2>
+							<span class="blog-item-blurb-holder">
+								<img class="blog-item-image" :src="blog_post.image.file" />
+								<div class="blog-item-blurb">
+									<p class="blog-item-date">Published: {{ blog_post.date_publish }}</p>
+									<div
+										v-html="blog_post.body"
+									></div>
+								</div>
+							</span>
+						</router-link>
+					</div>
+				</div>
+			</div>
 		</div>
 	`
 };
 
-const Toons = {
+const Github = {
 	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
-			This is the Toons page.
+			This is the Github page.
 		</div>
 	`
 };
 
-const Sbemails = {
+const Contact = {
 	props: props_for_root_router_view,
 	template: `
 		<div class="body" id="body">
-			This is the Sbemails page.
-		</div>
-	`
-};
-
-const Yodeling = {
-	props: props_for_root_router_view,
-	template: `
-		<div class="body" id="body">
-			This is the Yodeling page.
-		</div>
-	`
-};
-
-const Yodeling2 = {
-	props: props_for_root_router_view,
-	template: `
-		<div class="body" id="body">
-			This is the Yodeling2 page.
+			This is the Contact page.
 		</div>
 	`
 };
 
 const routes = [
-	{ path: '', component: Home },
-	{ path: '/', component: Home },
-	{ path: '/home', component: Home },
-	{ path: '/games', component: Games },
-	{ path: '/toons', component: Toons },
-	{ path: '/sbemails', component: Sbemails },
-	{ path: '/yodeling', component: Yodeling },
-	{ path: '/yodeling2', component: Yodeling2 },
-	{ path: '/blog/:id', component: BlogPost },
+	{path: '', component: About},
+	{path: '/', component: About},
+	{path: '/about', component: About},
+	{path: '/blog_list', component: Blog},
+	{path: '/github', component: Github},
+	{path: '/contact', component: Contact},
+	{path: '/blog/:id', component: BlogPost},
 ];
 
 const router = new VueRouter({
@@ -255,7 +258,7 @@ const router = new VueRouter({
 	routes: routes,
 });
 
-const DEFAULT_TITLE = 'This is a Title';
+const DEFAULT_TITLE = 'twa.ninja - The Personal Website of Tim Anderson';
 
 router.afterEach((to, from) => {
 	Vue.nextTick(() => {
@@ -286,12 +289,10 @@ let app = new Vue({
 	el: '#app',
 	data: {
 		menu_list: [
-			{id: '/home', label: 'Home'},
-			{id: '/games', label: 'Games'},
-			{id: '/toons', label: 'Toons'},
-			{id: '/sbemails', label: 'sbemails'},
-			{id: '/yodeling', label: 'Yodeling'},
-			{id: '/yodeling2', label: 'Yodeling'},
+			{id: '/about', label: 'About'},
+			{id: '/blog_list', label: 'Blog'},
+			{id: '/github', label: 'Github'},
+			{id: '/contact', label: 'Contact'},
 		],
 		is_content_loading: true,
 		content: [],
@@ -299,7 +300,7 @@ let app = new Vue({
 	template: `
 		<div class="app" id="app">
 			<div class="header" id="header">
-				<h1>This is the Title of the Page</h1>
+				<h1>twa.ninja - The Personal Website of Tim Anderson</h1>
 			</div>
 			<div class="menu" id="menu">
 				<menu-item
@@ -309,13 +310,15 @@ let app = new Vue({
 				></menu-item>
 			</div>
 			<div class="body" id="body">
-				<router-view
-					:content="content"
-					:is_content_loading="is_content_loading"
-				></router-view>
+					<router-view
+						:content="content"
+						:is_content_loading="is_content_loading"
+					></router-view>
 			</div>
 			<div class="footer" id="footer">
-				Feet go Here.
+				<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+					<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+					<br />Unless noted otherwise, the content of this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 			</div>
 		</div>
 	`

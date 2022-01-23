@@ -120,6 +120,9 @@ const BlogPost = {
 			console.log("ingestPostPreview: postPreview", postPreview);
 			this.postPreview = postPreview;
 		},
+		cleanUpTimestamp(timestamp) {
+			return timestamp.split(' ')[0];
+		},
 	},
 	template: `
 		<div class="body-content" id="body-content">
@@ -131,11 +134,13 @@ const BlogPost = {
 				class="blog-post-content"
 			>
 				<h1>{{ post.title }}</h1>
+				<p>Date Published: {{ cleanUpTimestamp(post.date_publish) }}</p>
 				<div 
 					class="post-images"
 					v-if="post.image.file"
 				><a 
 					class="image-link"
+					target="_blank"
 					:href="post.image.file"
 				>
 					<img 
@@ -161,6 +166,7 @@ const BlogPost = {
 						>
 							<a 
 								class="image-link"
+								target="_blank"
 								:href="image.filename"
 							>
 								<img 
@@ -205,7 +211,16 @@ const Blog = {
 			return data = data.replace(/<(.|\n)*?>/g, '');
 		},
 		getSortedBlogPosts(content) {
-			return content;
+			return content.sort((a, b) => {
+				if (a['date_publish'] < b['date_publish']) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
+		},
+		cleanUpTimestamp(timestamp) {
+			return timestamp.split(' ')[0];
 		},
 	},
 	template: `
@@ -231,7 +246,7 @@ const Blog = {
 							<span class="blog-item-blurb-holder">
 								<img class="blog-item-image" :src="blog_post.image.file" />
 								<div class="blog-item-blurb">
-									<p class="blog-item-date">Published: {{ blog_post.date_publish }}</p>
+									<p class="blog-item-date">Date Published: {{ cleanUpTimestamp(blog_post.date_publish) }}</p>
 									<p class="blog-blurb-text">{{ GenerateBlogBlurb(blog_post.body) }}</p>
 								</div>
 							</span>

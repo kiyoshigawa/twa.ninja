@@ -32,7 +32,7 @@ const About = {
 	template: `
 		<div class="body-content" id="body-content">
 			<h1>There are some who call me... 'Tim'</h1>
-			<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="/#/blog">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="/#/github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
+			<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="/blog">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="/github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
 			<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer fo 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently. There's a <a href="I haven't done this yet">blog post</a> that covers the general history of the Utah hackerspaces as I remember it.</p>
 		</div>
 	`
@@ -48,7 +48,13 @@ const BlogPostEditor = {
 	},
 	data() {
 		return {
-			mutablePost: jsonClone(this.post),
+			mutablePost: Object.assign(
+				jsonClone(this.post),
+				{
+					id: this.post.id || this.$route.params.id,
+
+				}
+			),
 		}
 	},
 	methods: {
@@ -68,6 +74,15 @@ const BlogPostEditor = {
 			>
 				<div class="editor-field">
 					<label>
+						<span>id</span>
+						<input
+							type="text"
+							v-model="mutablePost.id"
+						/>
+					</label>
+				</div>
+				<div class="editor-field">
+					<label>
 						<span>Title</span>
 						<input
 							type="text"
@@ -77,7 +92,7 @@ const BlogPostEditor = {
 				</div>
 				<div class="editor-field">
 					<label>
-						<span>Title</span>
+						<span>Body</span>
 						<textarea
 							type="text"
 							v-model="mutablePost.body"
@@ -151,17 +166,17 @@ const BlogPost = {
 				>Date Published: {{ cleanUpTimestamp(post.date_publish) }}</p>
 				<div 
 					class="post-images"
-					v-if="post.image && post.image.file"
+					v-if="post.image && post.image.filename"
 				><a 
 					class="image-link"
 					target="_blank"
-					:href="post.image.file"
+					:href="post.image.filename"
 				>
 					<img 
 						class="post-image"
-						:src="post.image.file"
-						:title="post.title + 'cover photo'"
-						:alt="post.title + 'cover photo'"
+						:src="post.image.filename"
+						:title="post.image.title || post.title + ' cover photo'"
+						:alt="post.image.title || post.title + ' cover photo'"
 					/>
 				</a>
 				</div>
@@ -255,9 +270,16 @@ const Blog = {
 				>
 					<strong class="blog-item-title">{{ blog_post.title }}</strong>
 					<span class="blog-item-blurb-holder">
-						<img class="blog-item-image" :src="blog_post.image.file" />
+						<img 
+							class="blog-item-image" 
+							:src="blog_post.image.filename"
+							:alt="blog_post.image.title || blog_post.title + ' cover photo'"
+							:title="blog_post.image.title || blog_post.title + ' cover photo'"
+						/>
 						<span class="blog-item-blurb">
 							<span class="blog-item-date">Date Published: {{ cleanUpTimestamp(blog_post.date_publish) }}</span>
+							<br />
+							<br />
 							<span class="blog-blurb-text">{{ GenerateBlogBlurb(blog_post.body) }}</span>
 						</span>
 					</span>

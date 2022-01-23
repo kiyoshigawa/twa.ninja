@@ -67,6 +67,10 @@ body {
 	padding-bottom: 0;
 }
 
+.main-page-title-link {
+	text-decoration: none;
+}
+
 #content-holder {
 	display: block;
 	margin-left: auto;

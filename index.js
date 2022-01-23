@@ -366,7 +366,12 @@ let app = new Vue({
 	template: `
 		<div class="app" id="app">
 			<div class="header" id="header">
+				<a 
+					class="main-page-title-link"
+					href="/about/"
+				>
 				<h1>twa.ninja</h1>
+				</a>
 				<h2>The Personal Website of Tim Anderson</h2>
 			</div>
 			<div class="menu" id="menu">

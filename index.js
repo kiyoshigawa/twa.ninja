@@ -173,24 +173,24 @@ const BlogPost = {
 					class="post-images"
 					v-if="post.image_list && post.image_list.length"
 				>
-						<div 
-							class="post-image-holder"
-							v-for="image of post.image_list"
-							:key="image.filename"
+					<div 
+						class="post-image-holder"
+						v-for="image of post.image_list"
+						:key="image.filename"
+					>
+						<a 
+							class="image-link"
+							target="_blank"
+							:href="image.filename"
 						>
-							<a 
-								class="image-link"
-								target="_blank"
-								:href="image.filename"
-							>
-								<img 
-									class="post-image"
-									:src="image.filename"
-									:title="image.title"
-									:alt="image.title"
-								/>
-							</a>
-						</div>
+							<img 
+								class="post-image"
+								:src="image.filename"
+								:title="image.title"
+								:alt="image.title"
+							/>
+						</a>
+					</div>
 				</div>
 				<div 
 					class="post-files"
@@ -247,27 +247,21 @@ const Blog = {
 				v-else
 				class="blog-list"
 			>
-				<div
-					class="blog-item"
+				<router-link
+					class="blog-item-link"
 					v-for="blog_post of sortedPosts"
 					:key="blog_post.id"
+					:to="'/blog/' + blog_post.id"
 				>
-					<div class="blog-item-holder">
-						<router-link
-							class = "blog-item-link"
-							:to="'/blog/' + blog_post.id"
-						>
-							<h2 class="blog-item-title">{{ blog_post.title }}</h2>
-							<span class="blog-item-blurb-holder">
-								<img class="blog-item-image" :src="blog_post.image.file" />
-								<div class="blog-item-blurb">
-									<p class="blog-item-date">Date Published: {{ cleanUpTimestamp(blog_post.date_publish) }}</p>
-									<p class="blog-blurb-text">{{ GenerateBlogBlurb(blog_post.body) }}</p>
-								</div>
-							</span>
-						</router-link>
-					</div>
-				</div>
+					<strong class="blog-item-title">{{ blog_post.title }}</strong>
+					<span class="blog-item-blurb-holder">
+						<img class="blog-item-image" :src="blog_post.image.file" />
+						<span class="blog-item-blurb">
+							<span class="blog-item-date">Date Published: {{ cleanUpTimestamp(blog_post.date_publish) }}</span>
+							<span class="blog-blurb-text">{{ GenerateBlogBlurb(blog_post.body) }}</span>
+						</span>
+					</span>
+				</router-link>
 			</div>
 		</div>
 	`

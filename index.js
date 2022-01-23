@@ -128,7 +128,13 @@ const BlogPostEditor = {
 		},
 		addFile() {
 			this.mutablePost.file_list.push({title: "", filename: ""});
-		}
+		},
+		saveToLocalStorage() {
+			localStorage.setItem(this.mutablePost.id, JSON.stringify(this.mutablePost));
+		},
+		deleteFromLocalStorage() {
+			localStorage.removeItem(this.mutablePost.id);
+		},
 	},
 	template: `
 		<div
@@ -231,6 +237,16 @@ const BlogPostEditor = {
 				</div>
 				<div class="editor-field">
 					<input type="submit" value="Preview Post"/>
+					<input 
+						type="button" 
+						value="Save to Local Storage"
+						@click="saveToLocalStorage"
+					/>
+					<input 
+						type="button" 
+						value="Delete From Local Storage"
+						@click="deleteFromLocalStorage"
+					/>
 				</div>
 			</form>
 		</div>
@@ -258,6 +274,9 @@ const BlogPost = {
 			// !! turns truthy or falsey into exactly true or false
 			return !!this.$route.query.e;
 		},
+		contentFromLocalStorage() {
+			return JSON.parse(localStorage.getItem(this.id) || "null");
+		},
 		post() {
 			const id = this.id;
 			const is_content_loading = this.is_content_loading;
@@ -265,12 +284,13 @@ const BlogPost = {
 				title: "404 Page not found",
 				body: "<p>We don't have that blog post. You're clearly trying to hack me. Please stop, I have nothing of value.</p>",
 			}
+			const content_from_local_storage = this.isEditorMode ? this.contentFromLocalStorage : null;
 			const page_content = is_content_loading
 				? {}
 				: this.content.find(function (blog_post) {
 				return blog_post.id === id;
 			}) || content_for_404_page;
-			return this.postPreview || page_content;
+			return this.postPreview || content_from_local_storage || page_content;
 		}
 	},
 	methods: {
@@ -287,6 +307,10 @@ const BlogPost = {
 				v-if="!is_content_loading"
 				class="blog-post-content"
 			>
+				<h1 
+					style="color: red;"
+					v-if="post===contentFromLocalStorage"
+				>WARN: THIS PAGE NOT REAL!</h1>
 				<h1>{{ post.title }}</h1>
 				<p
 					v-if="post.date_publish"

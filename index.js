@@ -120,7 +120,7 @@ const BlogPost = {
 			const is_content_loading = this.is_content_loading;
 			const content_for_404_page = {
 				title: "404 Page not found",
-				body: "<p>We don't have that. You're clearly trying to hack me. Please stop, I have nothing of value.</p>",
+				body: "<p>We don't have that blog post. You're clearly trying to hack me. Please stop, I have nothing of value.</p>",
 			}
 			const page_content = is_content_loading
 				? {}
@@ -295,6 +295,18 @@ const Contact = {
 	`
 };
 
+const NotFound = {
+	mixins: [
+		propsForRouterViewMixin
+	],
+	template: `
+		<div class="body-content" id="body-content">
+			<h1>404 Page Not Found</h1>
+			<p>We don't got it. Go look somewhere else.</p>
+		</div>
+	`
+};
+
 const routes = [
 	{path: '', component: About},
 	{path: '/', component: About},
@@ -303,6 +315,7 @@ const routes = [
 	{path: '/github', component: Github},
 	{path: '/contact', component: Contact},
 	{path: '/blog/:id', component: BlogPost},
+	{path: '*', component: NotFound},
 ];
 
 const router = new VueRouter({

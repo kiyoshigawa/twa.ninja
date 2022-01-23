@@ -206,17 +206,18 @@ const BlogPost = {
 
 const Blog = {
 	props: props_for_root_router_view,
+	computed: {
+		sortedPosts() {
+			return this.getSortedBlogPosts(this.content);
+		},
+	},
 	methods: {
 		GenerateBlogBlurb(data) {
 			return data = data.replace(/<(.|\n)*?>/g, '');
 		},
 		getSortedBlogPosts(content) {
 			return content.sort((a, b) => {
-				if (a['date_publish'] < b['date_publish']) {
-					return 1;
-				} else {
-					return 0;
-				}
+				return b.date_publish.localeCompare(a.date_publish);
 			});
 		},
 		cleanUpTimestamp(timestamp) {
@@ -234,7 +235,7 @@ const Blog = {
 			>
 				<div
 					class="blog-item"
-					v-for="blog_post of getSortedBlogPosts(content)"
+					v-for="blog_post of sortedPosts"
 					:key="blog_post.id"
 				>
 					<div class="blog-item-holder">

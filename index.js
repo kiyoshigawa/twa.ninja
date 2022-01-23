@@ -108,6 +108,8 @@ const BlogPostEditor = {
 				{
 					id: this.post.id || this.$route.params.id,
 					image: this.post.image || {title: "", filename: ""},
+					image_list: this.post.image_list || [],
+					file_list: this.post.file_list || [],
 				}
 			),
 		}
@@ -119,6 +121,12 @@ const BlogPostEditor = {
 			console.log('The form was submit!', mutablePostCopy);
 			this.$emit('post', mutablePostCopy);
 		},
+		addImage() {
+			this.mutablePost.image_list.push({title: "", filename: ""});
+		},
+		addFile() {
+			this.mutablePost.file_list.push({title: "", filename: ""});
+		}
 	},
 	template: `
 		<div
@@ -169,8 +177,58 @@ const BlogPostEditor = {
 						/>
 					</label>
 				</div>
+				<div class="editor-file-list">
+					<h3>Images:</h3>
+					<div
+						v-for="(file, index) in mutablePost.image_list"
+						:key="index"
+					>
+						<file-editor
+							:file_object="file"
+							@update:file_object="mutablePost.image_list.splice(index, 1, $event)"
+						></file-editor>
+						<div class="editor-field">
+							<button 
+								type="button"
+								@click="mutablePost.image_list.splice(index, 1)"
+							>X</button>
+						</div>
+					</div>
+					
+					<div class="editor-field">
+						<button 
+							type="button"
+							@click="addImage"
+						>Add Image</button>
+					</div>
+				</div>
+				<div class="editor-file-list">
+					<h3>Files:</h3>
+					<div
+						v-for="(file, index) in mutablePost.file_list"
+						:key="index"
+					>
+						<file-editor
+							:file_object="file"
+							@update:file_object="mutablePost.file_list.splice(index, 1, $event)"
+						></file-editor>
+						<div class="editor-field">
+							<button 
+								type="button"
+								@click="mutablePost.file_list.splice(index, 1)"
+							>X</button>
+						</div>
+					</div>
+					
+					<div class="editor-field">
+						<button 
+							type="button"
+							@click="addFile"
+						>Add File</button>
+					</div>
+				</div>
 				<div class="editor-field">
-					<input type="submit" />
+					<input type="submit" value="Preview Post"/>
 				</div>
 			</form>
 		</div>
@@ -258,8 +316,8 @@ const BlogPost = {
 				>
 					<div 
 						class="post-image-holder"
-						v-for="image of post.image_list"
-						:key="image.filename"
+						v-for="(image, index) in post.image_list"
+						:key="index"
 					>
 						<a 
 							class="image-link"

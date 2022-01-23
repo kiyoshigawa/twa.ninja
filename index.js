@@ -32,7 +32,7 @@ const About = {
 	template: `
 		<div class="body-content" id="body-content">
 			<h1>There are some who call me... 'Tim'</h1>
-			<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="/#/blog_list">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="/#/github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
+			<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="/#/blog">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="/#/github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
 			<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer fo 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently. There's a <a href="I haven't done this yet">blog post</a> that covers the general history of the Utah hackerspaces as I remember it.</p>
 		</div>
 	`
@@ -311,7 +311,7 @@ const routes = [
 	{path: '', component: About},
 	{path: '/', component: About},
 	{path: '/about', component: About},
-	{path: '/blog_list', component: Blog},
+	{path: '/blog', component: Blog},
 	{path: '/github', component: Github},
 	{path: '/contact', component: Contact},
 	{path: '/blog/:id', component: BlogPost},
@@ -319,7 +319,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-	mode: 'hash',
+	mode: 'history',
 	routes: routes,
 });
 
@@ -356,7 +356,7 @@ let app = new Vue({
 	data: {
 		menu_list: [
 			{id: '/about', label: 'About'},
-			{id: '/blog_list', label: 'Blog'},
+			{id: '/blog', label: 'Blog'},
 			{id: '/github', label: 'Github'},
 			{id: '/contact', label: 'Contact'},
 		],
@@ -391,7 +391,7 @@ let app = new Vue({
 	`
 });
 
-let content_url = './content.json';
+let content_url = '/content.json';
 
 let content_response_promise = fetch(content_url);
 

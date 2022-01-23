@@ -360,12 +360,12 @@ let app = new Vue({
 	template: `
 		<div class="app" id="app">
 			<div class="header" id="header">
-				<a 
-					class="main-page-title-link"
-					href="/about/"
-				>
-				<h1>twa.ninja</h1>
-				</a>
+				<h1>
+					<a 
+						class="main-page-title-link"
+						href="/about/"
+					>twa.ninja</a>
+				</h1>
 				<h2>The Personal Website of Tim Anderson</h2>
 			</div>
 			<div class="menu" id="menu">
@@ -376,10 +376,10 @@ let app = new Vue({
 				></menu-item>
 			</div>
 			<div class="content" id="content">
-					<router-view
-						:content="content"
-						:is_content_loading="is_content_loading"
-					></router-view>
+				<router-view
+					:content="content"
+					:is_content_loading="is_content_loading"
+				></router-view>
 			</div>
 			<div class="footer" id="footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">

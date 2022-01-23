@@ -4,19 +4,31 @@ const jsonClone = function (data) {
 	return JSON.parse(JSON.stringify(data));
 };
 
-const props_for_root_router_view = {
-	content: {
-		type: Array,
-		required: true,
+const cleanupTimestampMixin = {
+	methods: {
+		cleanUpTimestamp(timestamp) {
+			return timestamp.split(' ')[0];
+		},
 	},
-	is_content_loading: {
-		type: Boolean,
-		required: true,
-	},
-};
+}
+
+const propsForRouterViewMixin = {
+	props: {
+		content: {
+			type: Array,
+			required: true,
+		},
+		is_content_loading: {
+			type: Boolean,
+			required: true,
+		},
+	}
+}
 
 const About = {
-	props: props_for_root_router_view,
+	mixins: [
+		propsForRouterViewMixin
+	],
 	template: `
 		<div class="body-content" id="body-content">
 			<h1>There are some who call me... 'Tim'</h1>
@@ -83,10 +95,13 @@ const BlogPostEditor = {
 };
 
 const BlogPost = {
+	mixins: [
+		cleanupTimestampMixin,
+		propsForRouterViewMixin,
+	],
 	components: {
 		BlogPostEditor: BlogPostEditor
 	},
-	props: props_for_root_router_view,
 	data() {
 		return {
 			postPreview: null
@@ -120,9 +135,6 @@ const BlogPost = {
 			console.log("ingestPostPreview: postPreview", postPreview);
 			this.postPreview = postPreview;
 		},
-		cleanUpTimestamp(timestamp) {
-			return timestamp.split(' ')[0];
-		},
 	},
 	template: `
 		<div class="body-content" id="body-content">
@@ -134,10 +146,12 @@ const BlogPost = {
 				class="blog-post-content"
 			>
 				<h1>{{ post.title }}</h1>
-				<p>Date Published: {{ cleanUpTimestamp(post.date_publish) }}</p>
+				<p
+					v-if="post.date_publish"
+				>Date Published: {{ cleanUpTimestamp(post.date_publish) }}</p>
 				<div 
 					class="post-images"
-					v-if="post.image.file"
+					v-if="post.image && post.image.file"
 				><a 
 					class="image-link"
 					target="_blank"
@@ -205,7 +219,10 @@ const BlogPost = {
 }
 
 const Blog = {
-	props: props_for_root_router_view,
+	mixins: [
+		cleanupTimestampMixin,
+		propsForRouterViewMixin,
+	],
 	computed: {
 		sortedPosts() {
 			return this.getSortedBlogPosts(this.content);
@@ -219,9 +236,6 @@ const Blog = {
 			return content.sort((a, b) => {
 				return b.date_publish.localeCompare(a.date_publish);
 			});
-		},
-		cleanUpTimestamp(timestamp) {
-			return timestamp.split(' ')[0];
 		},
 	},
 	template: `
@@ -260,7 +274,9 @@ const Blog = {
 };
 
 const Github = {
-	props: props_for_root_router_view,
+	mixins: [
+		propsForRouterViewMixin
+	],
 	template: `
 		<div class="body-content" id="body-content">
 			This is the Github page.
@@ -269,7 +285,9 @@ const Github = {
 };
 
 const Contact = {
-	props: props_for_root_router_view,
+	mixins: [
+		propsForRouterViewMixin
+	],
 	template: `
 		<div class="body-content" id="body-content">
 			This is the Contact page.

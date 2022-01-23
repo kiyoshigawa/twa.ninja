@@ -19,7 +19,7 @@ const About = {
 	props: props_for_root_router_view,
 	template: `
 		<div class="body-content" id="body-content">
-			<h1>About Tim</h1>
+			<h1>There are some who call me... 'Tim'</h1>
 			<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="/#/blog_list">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="/#/github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
 			<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer fo 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently. There's a <a href="I haven't done this yet">blog post</a> that covers the general history of the Utah hackerspaces as I remember it.</p>
 		</div>
@@ -131,9 +131,25 @@ const BlogPost = {
 				class="blog-post-content"
 			>
 				<h1>{{ post.title }}</h1>
+				<div 
+					class="post-images"
+					v-if="post.image.file"
+				><a 
+					class="image-link"
+					:href="post.image.file"
+				>
+					<img 
+						class="post-image"
+						:src="post.image.file"
+						:title="post.title + 'cover photo'"
+						:alt="post.title + 'cover photo'"
+					/>
+				</a>
+				</div>
 				<div
 					v-html="post.body"
-				></div>
+				>
+				</div>
 				<div 
 					class="post-images"
 					v-if="post.image_list && post.image_list.length"
@@ -187,7 +203,10 @@ const Blog = {
 	methods: {
 		GenerateBlogBlurb(data) {
 			return data = data.replace(/<(.|\n)*?>/g, '');
-		}
+		},
+		getSortedBlogPosts(content) {
+			return content;
+		},
 	},
 	template: `
 		<div class="body-content" id="body-content">
@@ -200,7 +219,7 @@ const Blog = {
 			>
 				<div
 					class="blog-item"
-					v-for="blog_post of content"
+					v-for="blog_post of getSortedBlogPosts(content)"
 					:key="blog_post.id"
 				>
 					<div class="blog-item-holder">
@@ -260,6 +279,7 @@ const router = new VueRouter({
 const DEFAULT_TITLE = 'twa.ninja - The Personal Website of Tim Anderson';
 
 router.afterEach((to, from) => {
+	window.scrollTo(0,0);
 	Vue.nextTick(() => {
 		document.title = to.meta.title || DEFAULT_TITLE;
 	})

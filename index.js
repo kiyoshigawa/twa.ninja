@@ -38,6 +38,61 @@ const About = {
 	`
 };
 
+const makeComputedGetterSetter = function (source_object_name, property_name) {
+	return {
+		get() {
+			return this[source_object_name][property_name];
+		},
+		set(value) {
+			const compositeObject = jsonClone(this[source_object_name]);
+			compositeObject[property_name] = value;
+			this.$emit(
+				"update:" + source_object_name,
+				compositeObject
+			);
+		},
+	};
+}
+
+Vue.component('file-editor', {
+	props: {
+		file_object: {
+			type: Object,
+			required: true,
+		},
+	},
+	computed: {
+		filename: makeComputedGetterSetter('file_object', 'filename'),
+		title: makeComputedGetterSetter('file_object', 'title'),
+	},
+	template: `
+		<div
+			class="file-editor"
+		>
+			<h4>File:</h4>
+			<div class="editor-field">
+				<label>
+					<span>filename</span>
+					<input
+						
+						type="text"
+						v-model="filename"
+					/>
+				</label>
+			</div>
+			<div class="editor-field">
+				<label>
+					<span>alt text</span>
+					<input
+						type="text"
+						v-model="title"
+					/>
+				</label>
+			</div>
+		</div>
+	`
+});
+
 const BlogPostEditor = {
 	name: 'blog-post-editor',
 	props: {
@@ -52,7 +107,7 @@ const BlogPostEditor = {
 				jsonClone(this.post),
 				{
 					id: this.post.id || this.$route.params.id,
-
+					image: this.post.image || {title: "", filename: ""},
 				}
 			),
 		}
@@ -87,6 +142,19 @@ const BlogPostEditor = {
 						<input
 							type="text"
 							v-model="mutablePost.title"
+						/>
+					</label>
+				</div>
+				<file-editor
+					:file_object="mutablePost.image"
+					@update:file_object="mutablePost.image = $event"
+				></file-editor>
+				<div class="editor-field">
+					<label>
+						<span>Date Published</span>
+						<input
+							type="text"
+							v-model="mutablePost.date_publish"
 						/>
 					</label>
 				</div>
@@ -128,7 +196,7 @@ const BlogPost = {
 		},
 		isEditorMode() {
 			// !! turns truthy or falsey into exactly true or false
-			return !!this.$route.query.editor_mode;
+			return !!this.$route.query.e;
 		},
 		post() {
 			const id = this.id;
@@ -350,7 +418,7 @@ router.afterEach((to, from) => {
 
 Vue.component('menu-item', {
 	props: {
-		data: {
+		link_object: {
 			type: Object,
 			required: true,
 		},
@@ -358,10 +426,10 @@ Vue.component('menu-item', {
 	template: `
 		<router-link
 			class="menu-link"
-			:to="data.id"
+			:to="link_object.id"
 		><span 
 			class="menu-item"
-		>{{ data.label }}</span>
+		>{{ link_object.label }}</span>
 		</router-link>
 	`
 });
@@ -394,7 +462,7 @@ let app = new Vue({
 				<menu-item
 					v-for="item of menu_list"
 					:key="item.id"
-					:data="item"
+					:link_object="item"
 				></menu-item>
 			</div>
 			<div class="content" id="content">

@@ -108,6 +108,7 @@ const BlogPostEditor = {
 				{
 					id: this.post.id || this.$route.params.id,
 					image: this.post.image || {title: "", filename: ""},
+					date_publish: this.post.date_publish || (new Date()).toJSON().split('T')[0],
 					image_list: this.post.image_list || [],
 					file_list: this.post.file_list || [],
 				}
@@ -118,7 +119,8 @@ const BlogPostEditor = {
 		handleSubmit(submitEvent) {
 			submitEvent.preventDefault();
 			const mutablePostCopy = jsonClone(this.mutablePost);
-			console.log('The form was submit!', mutablePostCopy);
+			const mutablePostCopy2 = jsonClone(this.mutablePost);
+			console.log('The form was submit!', mutablePostCopy2);
 			this.$emit('post', mutablePostCopy);
 		},
 		addImage() {
@@ -273,7 +275,6 @@ const BlogPost = {
 	},
 	methods: {
 		ingestPostPreview(postPreview) {
-			console.log("ingestPostPreview: postPreview", postPreview);
 			this.postPreview = postPreview;
 		},
 	},

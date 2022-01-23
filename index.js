@@ -18,12 +18,10 @@ const props_for_root_router_view = {
 const About = {
 	props: props_for_root_router_view,
 	template: `
-		<div class="body" id="body">
-			<div class="content">
-				<h1>About Tim</h1>
-				<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="blog">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
-				<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer fo 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently. There's a <a href="I haven't done this yet">blog post</a> that covers the general history of the Utah hackerspaces as I remember it.</p>
-			</div>
+		<div class="body-content" id="body-content">
+			<h1>About Tim</h1>
+			<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="/#/blog_list">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="/#/github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
+			<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer fo 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently. There's a <a href="I haven't done this yet">blog post</a> that covers the general history of the Utah hackerspaces as I remember it.</p>
 		</div>
 	`
 };
@@ -124,9 +122,7 @@ const BlogPost = {
 		},
 	},
 	template: `
-		<div 
-			class="blog-post"
-		>
+		<div class="body-content" id="body-content">
 			<div
 				v-if="is_content_loading"
 			>loading...</div>
@@ -164,7 +160,7 @@ const BlogPost = {
 					class="post-files"
 					v-if="post.file_list && post.file_list.length"
 				>
-					<h3>File Downloads</h3>
+					<h3>Download Files:</h3>
 					<div 
 						class="post-file"
 						v-for="file of post.file_list"
@@ -188,8 +184,13 @@ const BlogPost = {
 
 const Blog = {
 	props: props_for_root_router_view,
+	methods: {
+		GenerateBlogBlurb(data) {
+			return data = data.replace(/<(.|\n)*?>/g, '');
+		}
+	},
 	template: `
-		<div class="body" id="body">
+		<div class="body-content" id="body-content">
 			<div
 				v-if="is_content_loading"
 			>loading...</div>
@@ -212,9 +213,7 @@ const Blog = {
 								<img class="blog-item-image" :src="blog_post.image.file" />
 								<div class="blog-item-blurb">
 									<p class="blog-item-date">Published: {{ blog_post.date_publish }}</p>
-									<div
-										v-html="blog_post.body"
-									></div>
+									<p class="blog-blurb-text">{{ GenerateBlogBlurb(blog_post.body) }}</p>
 								</div>
 							</span>
 						</router-link>
@@ -228,7 +227,7 @@ const Blog = {
 const Github = {
 	props: props_for_root_router_view,
 	template: `
-		<div class="body" id="body">
+		<div class="body-content" id="body-content">
 			This is the Github page.
 		</div>
 	`
@@ -237,7 +236,7 @@ const Github = {
 const Contact = {
 	props: props_for_root_router_view,
 	template: `
-		<div class="body" id="body">
+		<div class="body-content" id="body-content">
 			This is the Contact page.
 		</div>
 	`
@@ -274,13 +273,13 @@ Vue.component('menu-item', {
 		},
 	},
 	template: `
-		<span 
+		<router-link
+			class="menu-link"
+			:to="data.id"
+		><span 
 			class="menu-item"
-		>
-			<router-link
-				:to="data.id"
-			>{{ data.label }}</router-link>
-		</span>
+		>{{ data.label }}</span>
+		</router-link>
 	`
 });
 
@@ -300,7 +299,8 @@ let app = new Vue({
 	template: `
 		<div class="app" id="app">
 			<div class="header" id="header">
-				<h1>twa.ninja - The Personal Website of Tim Anderson</h1>
+				<h1>twa.ninja</h1>
+				<h2>The Personal Website of Tim Anderson</h2>
 			</div>
 			<div class="menu" id="menu">
 				<menu-item
@@ -309,7 +309,7 @@ let app = new Vue({
 					:data="item"
 				></menu-item>
 			</div>
-			<div class="body" id="body">
+			<div class="content" id="content">
 					<router-view
 						:content="content"
 						:is_content_loading="is_content_loading"

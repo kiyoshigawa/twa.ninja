@@ -340,8 +340,8 @@ const BlogPost = {
 					<h3>Download Files:</h3>
 					<div 
 						class="post-file"
-						v-for="file of post.file_list"
-						:key="file.filename"
+						v-for="(file, index) in post.file_list"
+						:key="index"
 					>
 						<a 
 							:href="file.filename"

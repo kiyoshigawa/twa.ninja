@@ -33,7 +33,7 @@ const About = {
 		<div class="body-content" id="body-content">
 			<h1>There are some who call me... 'Tim'</h1>
 			<p>Tim Anderson (also known around the internet as <em>kiyoshigawa</em>) is a Utah-native maker / hacker, and this is his personal website. It's here as a place to show off some of the things that Tim has done. The <a href="/blog">Blog</a> has writeups for many of my projects over the years, as well as anything else I thought was interesting enough to put up on the internet. The <a href="/github">GitHub</a> page has links to some of my more interesting GitHub repos, so you don't need to wade through all the repos from the distant past to find the interesting things.</p>
-			<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer fo 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently. There's a <a href="I haven't done this yet">blog post</a> that covers the general history of the Utah hackerspaces as I remember it.</p>
+			<p>Tim has been a member of the local utah Hackerspace / Makerspace scene since its inception in late summer of 2009 with HackSLC. HackSLC later became the Transistor, which currently still persists as <a href="https://801labs.org/">801 Labs</a>. I was also a founding member of <a href="https://makesaltlake.org">MakeSLC</a>, though I don't have much to do with them currently.</p>
 		</div>
 	`
 };
@@ -446,7 +446,23 @@ const Github = {
 	],
 	template: `
 		<div class="body-content" id="body-content">
-			This is the Github page.
+			<p>This is the GitHub page. I've put some links to a few of my more interesting GitHub projects, so you don't need to wade through every repo to find the good ones. If you want to look through everything, <a href="https://github.com/kiyoshigawa?tab=repositories">here</a>'s the link.</p>
+			<h2>The oMIDItone</h2>
+			<p><a href="https://github.com/kiyoshigawa/oMIDItone_Controller_V2">https://github.com/kiyoshigawa/oMIDItone_Controller_V2</a></p>
+			<p>This is a project where I reverse engineered some analog Otamatone synths and added MIDI control to them. There's a couple <a href="https://twa.ninja/blog/omiditone_-_part_1">blog</a> <a href="https://twa.ninja/blog/omiditone_-_part_2">posts</a> about it as well.</p>
+			<h2>Embedded Rust Scaffold Projects</h2>
+			<p></p><a href="https://github.com/kiyoshigawa/bl602-scaffold">https://github.com/kiyoshigawa/bl602-scaffold</a><br>
+			<a href="https://github.com/kiyoshigawa/esp32c3-scaffold">https://github.com/kiyoshigawa/esp32c3-scaffold</a></p>
+			<p>These scaffold projects are intended to be used as jumping-off points for embedded hardware projects written in rust. The idea is that if you clone the repo and follow the readme instructions, you should be able to upload code to the MCU in question immediately. This lets you begin work on your actual project without needing to set up your toolchain every time.</p>
+			<h2>Lighting Controller</h2>
+			<p><a href="https://github.com/kiyoshigawa/lighting_controller">https://github.com/kiyoshigawa/lighting_controller</a></p>
+			<p>The lighting controller has been in ongoing development for quite a while, and is used in many of my video game controller projects, and the oMIDItone. The latest incarnation of it has been rewritten in rust to be more generally dropped into my future projects. It's set up to allow for custom layered linear animations on LED strips to be added to just about any project with ease.</p>
+			<h2>Fan Temperature Controller</h2>
+			<p><a href="https://github.com/kiyoshigawa/esp32c3-fan-temperature-controller">https://github.com/kiyoshigawa/esp32c3-fan-temperature-controller</a></p>
+			<p>This was a fun practical project that I threw together. I keep my video game consoles in a cabinet beneath my television, but they were getting too hot and overheating. This project uses a temperature sensor to measure the temperature inside the cabinet, and uses PWM control signals to set the speed to two computer fans to exhaust the hot air when things are getting too warm.</p>
+			<h2>twa.ninja</h2>
+			<p><a href="https://github.com/kiyoshigawa/twa.ninja">https://github.com/kiyoshigawa/twa.ninja</a></p>
+			<p>This website is also up on GitHub if you're interested in seeing what's going on under the hood.</p>
 		</div>
 	`
 };
@@ -457,7 +473,7 @@ const Contact = {
 	],
 	template: `
 		<div class="body-content" id="body-content">
-			This is the Contact page.
+			<p>If you wish to contact tim, you can email tim@{this website's domain}.</p>
 		</div>
 	`
 };

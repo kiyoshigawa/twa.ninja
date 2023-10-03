@@ -5,7 +5,7 @@ slug = "wedding_arch"
 
 [extra]
 image = "/files/wedding_arch/1539-0074.jpg"
-blurb = "This is a bunch of photos of the build for the arch for my wedding Its done with a ton of mortise and tenon joints and glue The top bars are at a  degree angle the rest are all square joints Made from cedar and finished with linseed oil..."
+blurb = "This is a bunch of photos of the build for the arch for my wedding Its done with a ton of mortise and tenon joints and glue The top bars are at a  degree angle the rest are all square joints Made from cedar and finished with linseed oil."
 +++
 
 This is a bunch of photos of the build for the arch for my wedding. It's done with a ton of mortise and tenon joints, and glue. The top bars are at a 45 degree angle, the rest are all square joints. Made from cedar, and finished with linseed oil.

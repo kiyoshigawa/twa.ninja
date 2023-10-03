@@ -5,7 +5,7 @@ slug = "planer_cart"
 
 [extra]
 image = "/files/planer_cart/2015-07-23-20.25.07.jpg"
-blurb = "I got a practically free planer so I decided to make a stand for it x and x Pine and Plywood with Mortise and Tenons and Screws..."
+blurb = "I got a practically free planer so I decided to make a stand for it x and x Pine and Plywood with Mortise and Tenons and Screws."
 +++
 
 I got a practically free planer, so I decided to make a stand for it. 2x4 and 4x4 Pine and Plywood, with Mortise and Tenons and Screws.

@@ -5,13 +5,13 @@ slug = "4-player_mame_cabinet"
 
 [extra]
 image = "/files/4-player_mame_cabinet/fight.jpg"
-blurb = "This is a post for the player arcade cabinet dcf and I made back around  dcf did most of the general idea work and I did all the CAD work I believe these CAD files have been updated with added tolerances but double check if you want someone to cut them for you Our first batch was a bit too thin on the routed channels and we had to manually route the edges off of everything to get it to fit No warranty is implied or included etcIt was designed to work with any VESA mount monitor and as far as software/hardware youre more or less on your own I recommend a Raspberry Pi running RetroPie and the joysticks and buttons of your choice Theres a parts list in the file download area below for reference No idea is any of the bits are still available as listed..."
+blurb = "This is a post for the player arcade cabinet dcf and I made back around  dcf did most of the general idea work and I did all the CAD work I believe these CAD files have been updated with added tolerances but double check if you want someone to cut them for you Our first batch was a bit too thin on the routed channels and we had to manually route the edges off of everything to get it to fit No warranty is implied or included etcIt was designed to work with any VESA mount monitor and as far as software/hardware youre more or less on your own I recommend a Raspberry Pi running RetroPie and the joysticks and buttons of your choice Theres a parts list in the file download area below for reference No idea is any of the bits are still available as listed."
 +++
 
 This is a post for the 4-player arcade cabinet d3c4f and I made back around 2011. d3c4f did most of the general idea work, and I did all the CAD work. I believe these CAD files have been updated with added tolerances, but double check if you want someone to cut them for you. Our first batch was a bit too thin on the routed channels, and we had to manually route the edges off of everything to get it to fit. No warranty is implied or included, etc.
 
 
-It was designed to work with any VESA mount monitor, and as far as software/hardware, you're more or less on your own. I recommend a Raspberry Pi running Retro-Pie, and the joysticks and buttons of your choice. There's a parts list in the file download area below for reference. No idea is any of the bits are still available as listed..
+It was designed to work with any VESA mount monitor, and as far as software/hardware, you're more or less on your own. I recommend a Raspberry Pi running Retro-Pie, and the joysticks and buttons of your choice. There's a parts list in the file download area below for reference. No idea is any of the bits are still available as listed.
 
 <div class="post-images">
 <div class="post-image-holder">

@@ -4,8 +4,8 @@ date = "2017-01-15"
 slug = "radical_dreamers_tab"
 
 [extra]
-image = ""
-blurb = "I wanted to learn to play the song Radical Dreamers composed by Yasunori Mitsuda for the Chrono Cross soundtrack I found some piano sheet music online and made a guitar tab based on it Hopefully someone out there will enjoy it as well..."
+image = "/files/radical_dreamers_tab/rd.jpg"
+blurb = "I wanted to learn to play the song Radical Dreamers composed by Yasunori Mitsuda for the Chrono Cross soundtrack I found some piano sheet music online and made a guitar tab based on it Hopefully someone out there will enjoy it as well."
 +++
 
 I wanted to learn to play the song Radical Dreamers composed by Yasunori Mitsuda for the Chrono Cross soundtrack. I found some piano sheet music online, and made a guitar tab based on it. Hopefully someone out there will enjoy it as well.

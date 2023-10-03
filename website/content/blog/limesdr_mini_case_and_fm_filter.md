@@ -5,7 +5,7 @@ slug = "limesdr_mini_case_and_fm_filter"
 
 [extra]
 image = "/files/limesdr_mini_case_and_fm_filter/2018-05-29-21.13.39.jpg"
-blurb = "I made a lasercut acrylic case for my LimeSDR Mini CAD Files below I also installed an FM filter You can see the comparison before and after on the ameteur m band and boy does it make a world of difference..."
+blurb = "I made a lasercut acrylic case for my LimeSDR Mini CAD Files below I also installed an FM filter You can see the comparison before and after on the ameteur m band and boy does it make a world of difference."
 +++
 
 I made a laser-cut acrylic case for my LimeSDR Mini. CAD Files below. I also installed an FM filter. You can see the comparison before and after on the ameteur 20m band, and boy does it make a world of difference.

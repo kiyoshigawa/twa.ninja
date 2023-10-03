@@ -5,7 +5,7 @@ slug = "moving_tt_from_provo_to_orem"
 
 [extra]
 image = "/files/moving_tt_from_provo_to_orem/img-20121118-212428.jpg"
-blurb = "In late  we moved the Transistor from Provo to Orem This has made a lot of people very angry and been widely regarded as a bad move Here are some pictures from this time including of the weird cat statue we glued to the ceiling before we left..."
+blurb = "In late  we moved the Transistor from Provo to Orem This has made a lot of people very angry and been widely regarded as a bad move Here are some pictures from this time including of the weird cat statue we glued to the ceiling before we left."
 +++
 
 In late 2012, we moved the Transistor from Provo to Orem. This has made a lot of people very angry and been widely regarded as a bad move. Here are some pictures from this time, including of the weird cat statue we glued to the ceiling before we left.

@@ -5,7 +5,7 @@ slug = "ubitx_enclosure"
 
 [extra]
 image = "/files/ubitx_enclosure/2018-05-13-11.44.38.jpg"
-blurb = "This is an enclosure I made for the uBitX out of / Acrylic Theres a bunch of pictures of the enclosure and some CAD/pdf files of the enclosure for your use..."
+blurb = "This is an enclosure I made for the uBitX out of / Acrylic Theres a bunch of pictures of the enclosure and some CAD/pdf files of the enclosure for your use."
 +++
 
 This is an enclosure I made for the uBitX out of 1/8" Acrylic. There's a bunch of pictures of the enclosure, and some CAD/pdf files of the enclosure for your use.

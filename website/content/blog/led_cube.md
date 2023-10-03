@@ -5,7 +5,7 @@ slug = "led_cube"
 
 [extra]
 image = "/files/led_cube/2018-05-29-20.25.54.jpg"
-blurb = "This is an LED cube I made from a minimalist arduino some resistors and a bunch of LEDs back in  Not much to it really and a couple of the LEDs are out at the moment Not sure why shrug..."
+blurb = "This is an LED cube I made from a minimalist arduino some resistors and a bunch of LEDs back in  Not much to it really and a couple of the LEDs are out at the moment Not sure why shrug."
 +++
 
 This is an LED cube I made from a minimalist arduino, some resistors, and a bunch of LEDs back in 2011. Not much to it really, and a couple of the LEDs are out at the moment. Not sure why. \*shrug\*

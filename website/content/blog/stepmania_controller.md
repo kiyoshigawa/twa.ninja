@@ -5,7 +5,7 @@ slug = "stepmania_controller"
 
 [extra]
 image = "/files/stepmania_controller/2018-05-29-20.51.05.jpg"
-blurb = "This was a simple arcade controller I made with the laser cutter an Atmega u board and some arcade buttons Another simple project It worked pretty well for quite some time but I just plugged it into my Windows  computer and I got a lovely BSOD so I might want to revisit this one in the near futureI know Id go for a Teensy LC if I made another one of these and maybe give it the IIDX treatment with nice lighting modes See below for some pics and my CAD file from the laser cutter..."
+blurb = "This was a simple arcade controller I made with the laser cutter an Atmega u board and some arcade buttons Another simple project It worked pretty well for quite some time but I just plugged it into my Windows  computer and I got a lovely BSOD so I might want to revisit this one in the near futureI know Id go for a Teensy LC if I made another one of these and maybe give it the IIDX treatment with nice lighting modes See below for some pics and my CAD file from the laser cutter."
 +++
 
 This was a simple arcade controller I made with the laser cutter, an Atmega 32u4 board, and some arcade buttons. Another simple project. It worked pretty well for quite some time, but I just plugged it into my Windows 10 computer and I got a lovely BSOD, so I might want to revisit this one in the near future.

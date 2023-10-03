@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+twa.ninja - {{ page.title }}
+{% endblock title %}
+
+{% block content %}
+<div class="body-content" id="body-content">
+	{{ page.content | safe }}
+</div>
+{% endblock content %}

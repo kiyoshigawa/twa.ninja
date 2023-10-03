@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{% block title %} {% endblock %}</title>
+	<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+
+<div class="content-holder" id="content-holder">
+	<div class="header" id="header">
+		<h1>
+			<a class="main-page-title-link"	href="/">twa.ninja</a>
+		</h1>
+		<h2>The Personal Website of Tim Anderson</h2>
+	</div>
+	<div class="menu" id="menu">
+		<a class="menu-link" href="/"><span class="menu-item">About</span></a>
+		<a class="menu-link" href="/blog"><span class="menu-item">Blog</span></a>
+		<a class="menu-link" href="/github"><span class="menu-item">GitHub</span></a>
+		<a class="menu-link" href="/contact"><span class="menu-item">Contact</span></a>
+	</div>
+	<div class="content" id="content">
+			{% block content %} {% endblock %}
+	</div>
+	<div class="footer" id="footer">
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+		<br />Unless noted otherwise, the content of this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+	</div>
+</div>
+
+</body>
+</html>

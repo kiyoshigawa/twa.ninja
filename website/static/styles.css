@@ -25,10 +25,6 @@ ul, ol {
 	padding-bottom: 16px;
 }
 
-#app {
-	font-family: 'Verdana', sans-serif;
-}
-
 #footer {
 	font-size: 12px;
 	padding: 8px;
@@ -72,6 +68,7 @@ body {
 }
 
 #content-holder {
+	font-family: 'Verdana', sans-serif;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;

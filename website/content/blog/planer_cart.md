@@ -1,6 +1,6 @@
 +++
 title = "Planer Cart"
-date = "2015-07-23 16:35:00"
+date = "2015-07-23"
 slug = "planer_cart"
 
 [extra]

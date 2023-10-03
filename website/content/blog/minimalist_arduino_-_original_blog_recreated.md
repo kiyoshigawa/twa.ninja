@@ -1,6 +1,6 @@
 +++
 title = "Minimalist Arduino - Original Blog Recreated"
-date = "2010-02-02 21:33:00"
+date = "2010-02-02"
 slug = "minimalist_arduino_-_original_blog_recreated"
 
 [extra]

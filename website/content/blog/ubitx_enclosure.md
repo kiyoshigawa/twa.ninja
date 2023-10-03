@@ -1,6 +1,6 @@
 +++
 title = "uBitX Enclosure"
-date = "2018-05-19 19:09:00"
+date = "2018-05-19"
 slug = "ubitx_enclosure"
 
 [extra]

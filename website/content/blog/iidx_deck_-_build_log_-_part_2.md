@@ -1,6 +1,6 @@
 +++
 title = "IIDX Deck - Build Log - Part 2"
-date = "2017-11-01 17:24:00"
+date = "2017-11-01"
 slug = "iidx_deck_-_build_log_-_part_2"
 
 [extra]
@@ -54,6 +54,3 @@ It looks more warped than it was in this pic. Not sure why. I glued up the dovet
 
 
 [![](/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.36.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.36.jpg)
-
-
-

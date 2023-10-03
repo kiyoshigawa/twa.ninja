@@ -1,6 +1,6 @@
 +++
 title = "Gorduino - Original Blog Recreated"
-date = "2010-08-22 04:58:00"
+date = "2010-08-22"
 slug = "gorduino_-_original_blog_recreated"
 
 [extra]

@@ -1,6 +1,6 @@
 +++
 title = "IIDX Deck - Build Log - Part 3"
-date = "2017-11-12 18:12:00"
+date = "2017-11-12"
 slug = "iidx_deck_-_build_log_-_part_3"
 
 [extra]
@@ -81,4 +81,3 @@ I ended up drilling holes for the power cord and USB cable, and added some handl
 
 
 Now it was all wired. Had to fix a couple bad connections, but it was ready for programming and lighting business. I'll cover the programming and color modes in Part 4.
-

@@ -1,6 +1,6 @@
 +++
 title = "Wedding Arch"
-date = "2015-09-12 17:00:00"
+date = "2015-09-12"
 slug = "wedding_arch"
 
 [extra]

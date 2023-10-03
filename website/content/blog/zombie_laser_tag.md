@@ -1,6 +1,6 @@
 +++
 title = "Zombie Laser Tag"
-date = "2010-11-05 13:13:00"
+date = "2010-11-05"
 slug = "zombie_laser_tag"
 
 [extra]

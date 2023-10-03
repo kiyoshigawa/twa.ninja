@@ -1,6 +1,6 @@
 +++
 title = "Animatronic R2-D2"
-date = "2010-04-02 22:00:00"
+date = "2010-04-02"
 slug = "animatronic_r2-d2"
 
 [extra]

@@ -1,6 +1,6 @@
 +++
 title = "Dovetail Utensil Box"
-date = "2013-12-03 09:42:00"
+date = "2013-12-03"
 slug = "dovetail_utensil_box"
 
 [extra]

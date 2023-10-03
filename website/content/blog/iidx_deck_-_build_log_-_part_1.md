@@ -1,6 +1,6 @@
 +++
 title = "IIDX Deck - Build Log - Part 1"
-date = "2015-09-18 18:00:00"
+date = "2015-09-18"
 slug = "iidx_deck_-_build_log_-_part_1"
 
 [extra]

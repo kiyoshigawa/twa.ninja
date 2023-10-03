@@ -1,6 +1,6 @@
 +++
 title = "The Night We Flooded tT Provo"
-date = "2010-08-18 02:30:00"
+date = "2010-08-18"
 slug = "the_night_we_flooded_tt_provo"
 
 [extra]

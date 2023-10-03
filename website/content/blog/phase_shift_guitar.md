@@ -1,6 +1,6 @@
 +++
 title = "Phase Shift Guitar"
-date = "2013-06-12 17:20:00"
+date = "2013-06-12"
 slug = "phase_shift_guitar"
 
 [extra]

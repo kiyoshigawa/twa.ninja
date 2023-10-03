@@ -1,6 +1,6 @@
 +++
 title = "4x4 Keyboard Cases"
-date = "2018-07-09 18:21:37"
+date = "2018-07-09"
 slug = "4x4_keyboard_cases"
 
 [extra]

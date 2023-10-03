@@ -1,6 +1,6 @@
 +++
 title = "Fake Dynamic DNS"
-date = "2018-05-28 14:19:22"
+date = "2018-05-28"
 slug = "fake_dynamic_dns"
 
 [extra]

@@ -1,6 +1,6 @@
 +++
 title = "Moving tT from Provo to Orem"
-date = "2012-11-30 03:46:00"
+date = "2012-11-30"
 slug = "moving_tt_from_provo_to_orem"
 
 [extra]

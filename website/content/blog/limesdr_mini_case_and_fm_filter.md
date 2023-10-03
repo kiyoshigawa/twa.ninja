@@ -1,6 +1,6 @@
 +++
 title = "LimeSDR Mini Case and FM Filter"
-date = "2018-05-30 03:17:22"
+date = "2018-05-30"
 slug = "limesdr_mini_case_and_fm_filter"
 
 [extra]

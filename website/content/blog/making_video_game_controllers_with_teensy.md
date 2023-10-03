@@ -1,6 +1,6 @@
 +++
 title = "Making Video Game Controllers with Teensy"
-date = "2019-03-22 13:45:09"
+date = "2019-03-22"
 slug = "making_video_game_controllers_with_teensy"
 
 [extra]

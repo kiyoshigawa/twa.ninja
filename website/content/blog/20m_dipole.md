@@ -1,6 +1,6 @@
 +++
 title = "20m Dipole"
-date = "2018-05-28 20:53:54"
+date = "2018-05-28"
 slug = "20m_dipole"
 
 [extra]

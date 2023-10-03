@@ -1,6 +1,6 @@
 +++
 title = "oMIDItone - Part 2"
-date = "2019-05-10 20:56:03"
+date = "2019-05-10"
 slug = "omiditone_-_part_2"
 
 [extra]

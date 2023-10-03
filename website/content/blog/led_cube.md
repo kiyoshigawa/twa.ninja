@@ -1,6 +1,6 @@
 +++
 title = "LED Cube"
-date = "2011-11-01 18:54:00"
+date = "2011-11-01"
 slug = "led_cube"
 
 [extra]

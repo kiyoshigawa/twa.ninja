@@ -1,6 +1,6 @@
 +++
 title = "4-Player MAME Cabinet"
-date = "2011-01-15 13:57:00"
+date = "2011-01-15"
 slug = "4-player_mame_cabinet"
 
 [extra]

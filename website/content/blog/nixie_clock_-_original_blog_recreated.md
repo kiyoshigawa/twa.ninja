@@ -1,6 +1,6 @@
 +++
 title = "Nixie Clock - Original Blog Recreated"
-date = "2010-05-12 18:00:00"
+date = "2010-05-12"
 slug = "nixie_clock_-_original_blog_recreated"
 
 [extra]

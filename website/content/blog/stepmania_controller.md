@@ -1,6 +1,6 @@
 +++
 title = "Stepmania Controller"
-date = "2013-05-25 23:50:00"
+date = "2013-05-25"
 slug = "stepmania_controller"
 
 [extra]

@@ -1,7 +1,7 @@
 resource "proxmox_lxc" "lxcs" {
   for_each      = var.lxcs
   target_node   = each.value.node_name
-  hostname      = each.value.name
+  hostname      = each.value.hostname
   searchdomain  = each.value.searchdomain
   nameserver    = each.value.nameserver
   unprivileged  = each.value.unprivileged
@@ -9,6 +9,7 @@ resource "proxmox_lxc" "lxcs" {
   start         = true
   onboot        = true
   password      = var.lxc_password
+  vmid          = each.value.vmid
 
   ssh_public_keys = <<-EOT
 	${var.ssh_keys}
@@ -40,6 +41,7 @@ resource "proxmox_lxc" "lxcs" {
       bridge     = network.value.bridge
       ip         = network.value.ip
       gw         = network.value.gw
+      hwaddr     = network.value.hwaddr
     }
   }
 

@@ -17,7 +17,8 @@ variable "datastore_name" {
 variable "lxcs" {
   type = map(object(
     {
-      name            = string
+      hostname        = string
+      vmid            = string
       searchdomain    = string
       nameserver      = string
       node_name       = string
@@ -35,6 +36,7 @@ variable "lxcs" {
         bridge = string
         ip     = string
         gw     = optional(string)
+        hwaddr = optional(string)
       })), [])
       mountpoint  = optional(list(object({
         slot    = string
@@ -47,8 +49,9 @@ variable "lxcs" {
     }
   ))
   default = {
-    "ansible" = {
-      name         = "ansible"
+    "twa-web" = {
+      hostname     = "twa-web"
+      vmid         = "201"
       searchdomain = "timternet.local"
       nameserver   = "192.168.1.1"
       node_name    = "TimeMox"
@@ -62,8 +65,8 @@ variable "lxcs" {
       network      = [{
         name   = "eth0"
         bridge = "vmbr0"
-        ip     = "192.168.1.55/24"
-        gw     = "192.168.1.1"
+        ip     = "dhcp"
+        hwaddr = "22:c6:ad:f5:1d:fd"
       }]
       inline   = [
         "apt update",

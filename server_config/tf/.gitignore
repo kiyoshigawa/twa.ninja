@@ -1,0 +1,12 @@
+*init.sh
+.terraform.d/*
+.terraform/providers/*
+**/.terraform.tfstate*
+local.*
+*.plan
+terraform_*.log
+*.log
+*.swp
+**/.*.swp
+**/terraform.tfstate
+**/terraform.*

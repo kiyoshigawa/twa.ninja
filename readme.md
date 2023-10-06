@@ -4,6 +4,8 @@ This is a repo where I store the twa.ninja website code, as well as the relevant
 
 On this branch specifically, I am converting the current javascript version of the site to use the Zola static site generator and md files for each blog post. To generate the site, all you need to do is run `zola build` in the `website` directory of this repo, and it will create the entire page in the `public` folder.
 
+## Blog Post Instructions
+
 To add a post to the blog, all you need to do is add a `*.md` file to the `website/content/blog` folder, and populate it with appropriate data. The blog posts have some required header information for proper page rendering, as shown here:
 
 ```markdown
@@ -52,3 +54,6 @@ My old blog (2 versions ago) had an automated process for adding images and file
     {multiple post-file divs can be added here to show multiple files for download}
 </div>
 ```
+## Server Setup Instructions
+
+Included in this repo in the `/server_config/tf` folder are some terraform config files that can be used to automatically set up the web server on my proxmox server using terraform. I've included a second readme in that folder specifically which explains what you will need to change in order to get that etup working.

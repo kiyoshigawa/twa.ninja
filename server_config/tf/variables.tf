@@ -45,7 +45,6 @@ variable "lxcs" {
         mp      = string
         size    = string
       })), [])
-      inline          = list(string)
     }
   ))
   default = {
@@ -65,16 +64,10 @@ variable "lxcs" {
       network      = [{
         name   = "eth0"
         bridge = "vmbr0"
-        ip     = "dhcp"
+        ip     = "192.168.1.6/24"
+        gw     = "192.168.1.1"
         hwaddr = "22:c6:ad:f5:1d:fd"
       }]
-      inline   = [
-        "apt update",
-        "apt install software-properties-common",
-        "apt-add-repository ppa:ansible/ansible",
-        "apt update && sudo apt install -y ansible",
-        "apt upgrade -y"
-      ]
     },
   }
 }

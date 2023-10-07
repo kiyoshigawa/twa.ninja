@@ -1,0 +1,33 @@
+---
+- name: Initial Web Server Provisioning
+  hosts: twa-web
+  remote_user: root
+
+  tasks:
+  - name: Update and upgrade all apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 # One Day
+
+  - name: Install various packages using apt
+    apt:
+      name:
+        - nginx
+        - git
+        - vim
+      state: latest
+
+  - name: Download zola web installer
+    ansible.builtin.get_url:
+      url: https://github.com/barnumbirr/zola-debian/releases/download/v0.17.2-1/zola_0.17.2-1_amd64_bullseye.deb
+      dest: ~/zola_installer.deb
+
+  - name: Install zola SSB
+    apt:
+      deb: ~/zola_installer.deb
+
+  - name: Clone Website Repository
+    ansible.builtin.git:
+      repo: https://github.com/kiyoshigawa/twa.ninja
+      dest: ~/twa.ninja/

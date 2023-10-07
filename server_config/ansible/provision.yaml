@@ -1,6 +1,6 @@
 ---
 - name: Initial Web Server Provisioning
-  hosts: twa-web
+  hosts: web
   remote_user: root
 
   tasks:

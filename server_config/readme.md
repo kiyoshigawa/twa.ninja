@@ -13,6 +13,8 @@ terraform apply local.plan
 ```
 After the LXC has been set up by terraform (assuming your ssh keys are correctly installed on the host system), you can use ansible to provision the server. You will need to have ansible installed on the host, and then you can run the following commands in the `/server_config/ansible/` to verify that you can connect to the new web server lxc, and then to provision the server and set up the website, including nginx, and letsencrypt.
 
+If using WSL, the default is for the ansible directory to be world-writable. This causes ansible ot ignore the ansible.cfg file by default for security reasons. In order to get the `ansible.cfg` file to be read, you will need to manually add an environment variable to allow use of the file before running commands: `export ANSIBLE_CONFIG=ansible.cfg`
+
 ```bash
 ansible all -i inventory -m ping
 ansible-playbook provision.yaml -i inventory

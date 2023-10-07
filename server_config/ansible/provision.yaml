@@ -18,6 +18,15 @@
         - vim
       state: latest
 
+  - name: make .bashrc colorful and add ll alias
+    ansible.builtin.lineinfile:
+      path: ~/.bashrc
+      line: |
+        export LS_OPTIONS='--color=auto' 
+        eval "$(dircolors)"
+        alias ls='ls $LS_OPTIONS'
+        alias ll='ls $LS_OPTIONS -laph'
+
   - name: Download zola web installer
     ansible.builtin.get_url:
       url: https://github.com/barnumbirr/zola-debian/releases/download/v0.17.2-1/zola_0.17.2-1_amd64_bullseye.deb

@@ -31,3 +31,8 @@
     ansible.builtin.git:
       repo: https://github.com/kiyoshigawa/twa.ninja
       dest: ~/twa.ninja/
+
+  - name: building website using zola
+    ansible.builtin.command:
+      chdir: ~/twa.ninja/website
+      cmd: zola build

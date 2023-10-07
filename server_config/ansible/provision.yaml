@@ -19,13 +19,26 @@
       state: latest
 
   - name: make .bashrc colorful and add ll alias
-    ansible.builtin.lineinfile:
-      path: ~/.bashrc
-      line: |
+    copy:
+      dest: ~/.bashrc
+      content: |
         export LS_OPTIONS='--color=auto' 
         eval "$(dircolors)"
         alias ls='ls $LS_OPTIONS'
         alias ll='ls $LS_OPTIONS -laph'
+
+  - name: Disallow SSH password authentication
+    lineinfile:
+      dest: /etc/ssh/sshd_config
+      regexp: "^PasswordAuthentication"
+      line: "PasswordAuthentication no"
+      state: present
+      validate: sshd -t -f %s
+
+  - name: Restart sshd
+    service:
+      name: sshd
+      state: restarted
 
   - name: Download zola web installer
     ansible.builtin.get_url:

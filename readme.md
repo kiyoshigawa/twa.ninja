@@ -56,4 +56,4 @@ My old blog (2 versions ago) had an automated process for adding images and file
 ```
 ## Server Setup Instructions
 
-Included in this repo in the `/server_config/tf` folder are some terraform config files that can be used to automatically set up the web server on my proxmox server using terraform. I've included a second readme in that folder specifically which explains what you will need to change in order to get that etup working.
+Included in this repo in the `/server_config/` folder are some terraform and ansible config files that can be used to automatically set up the web server on my proxmox box. I've included a second readme in that folder specifically which explains what you will need to change in order to get that setup working.

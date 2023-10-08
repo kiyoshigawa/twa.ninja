@@ -5,10 +5,10 @@ services:
     image: nginx:alpine
     restart: unless-stopped
     volumes:
-      - /home/tim/twa.ninja:/srv
-      - /home/tim/twa.ninja/server_config/nginx.conf:/etc/nginx/conf.d/default.conf
-      - /home/tim/twa.ninja/server_config/data/certbot/conf:/etc/letsencrypt
-      - /home/tim/twa.ninja/server_config/data/certbot/www:/var/www/certbot
+      - ~/twa.ninja/website/public:/srv
+      - ~/twa.ninja/server_config/ansible/files/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ~/twa.ninja/server_config/ansible/files/data/certbot/conf:/etc/letsencrypt
+      - ~/twa.ninja/server_config/ansible/files/data/certbot/www:/var/www/certbot
     ports:
       - 80:80
       - 443:443

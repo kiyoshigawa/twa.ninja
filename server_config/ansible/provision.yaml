@@ -4,27 +4,6 @@
   remote_user: root
 
   tasks:
-  - name: Update and upgrade all apt packages
-    apt:
-      upgrade: yes
-      update_cache: yes
-      cache_valid_time: 86400 # One Day
-
-  - name: Install various packages using apt
-    apt:
-      name:
-        - ufw
-        - git
-        - vim
-      state: latest
-
-  - name: Download docker install script
-    ansible.builtin.get_url:
-        url: https://get.docker.com
-        dest: ~/get-docker.sh
-
-  - name: Install docker from script
-    ansible.builtin.shell: sh ~/get-docker.sh
 
   - name: make .bashrc colorful and add ll alias
     copy:
@@ -48,6 +27,25 @@
       name: sshd
       state: restarted
 
+  - name: Update and upgrade all apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 # One Day
+
+  - name: Install various packages using apt
+    apt:
+      name:
+        - ufw
+        - git
+        - vim
+        - lsb-release
+        - gnupg2
+        - apt-transport-https
+        - ca-certificates
+        - software-properties-common
+      state: latest
+
   - name: Setup ufw to allow ssh via port 22, but only from LAN network
     community.general.ufw:
       rule: allow
@@ -68,6 +66,28 @@
     community.general.ufw:
       state: enabled
       default: deny
+
+  - name: Add Docker GPG apt Key
+    apt_key:
+      url: "https://download.docker.com/linux/debian/gpg"
+      state: present
+
+  - name: Add Docker Repository
+    apt_repository:
+      repo: "deb https://download.docker.com/linux/debian bookworm stable"
+      state: present
+      update_cache: true
+
+  - name: Update apt cache again now that docker repo is present
+    apt:
+      update_cache: yes
+
+  - name: Install docker and docker-compose using apt
+    apt:
+      name:
+        - docker
+        - docker-compose
+      state: latest
 
   - name: Download zola web installer
     ansible.builtin.get_url:

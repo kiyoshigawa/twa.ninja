@@ -63,9 +63,9 @@ variable "lxcs" {
       rootfs_size  = "20G"
       network      = [{
         name   = "eth0"
-        bridge = "vmbr0"
-        ip     = "192.168.1.6/24"
-        gw     = "192.168.1.1"
+        bridge = "vmbr1"
+        ip     = "192.168.2.7/24"
+        gw     = "192.168.2.1"
         hwaddr = "22:c6:ad:f5:1d:fd"
       }]
     },

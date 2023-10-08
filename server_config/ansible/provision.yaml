@@ -13,10 +13,18 @@
   - name: Install various packages using apt
     apt:
       name:
-        - nginx
+        - ufw
         - git
         - vim
       state: latest
+
+  - name: Download docker install script
+    ansible.builtin.get_url:
+        url: https://get.docker.com
+        dest: ~/get-docker.sh
+
+  - name: Install docker from script
+    ansible.builtin.shell: sh ~/get-docker.sh
 
   - name: make .bashrc colorful and add ll alias
     copy:
@@ -39,6 +47,27 @@
     service:
       name: sshd
       state: restarted
+
+  - name: Setup ufw to allow ssh via port 22, but only from LAN network
+    community.general.ufw:
+      rule: allow
+      port: 22
+      from_ip: 192.168.1.1/24
+
+  - name: Setup ufw to allow web server access via port 80
+    community.general.ufw:
+      rule: allow
+      port: 80
+
+  - name: Setup ufw to allow web server access via port 443
+    community.general.ufw:
+      rule: allow
+      port: 443
+
+  - name: Enable ufw firewall
+    community.general.ufw:
+      state: enabled
+      default: deny
 
   - name: Download zola web installer
     ansible.builtin.get_url:

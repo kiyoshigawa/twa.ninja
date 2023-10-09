@@ -107,3 +107,12 @@
     ansible.builtin.command:
       chdir: ~/twa.ninja/website
       cmd: zola build
+
+  - name: initialize letsencrypt certs using script
+    command:
+      cmd: ./init-letsencrypt.sh
+      chdir: /root/twa.ninja/server_config/files/
+
+  - name: start nginx server and certbot using docker-compose
+    community.docker.docker_compose:
+      project_src: /root/twa.ninja/server_config/files/

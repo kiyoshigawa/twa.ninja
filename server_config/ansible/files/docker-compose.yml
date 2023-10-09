@@ -5,10 +5,10 @@ services:
     image: nginx:alpine
     restart: unless-stopped
     volumes:
-      - ~/twa.ninja/website/public:/srv
-      - ~/twa.ninja/server_config/ansible/files/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ~/twa.ninja/server_config/ansible/files/data/certbot/conf:/etc/letsencrypt
-      - ~/twa.ninja/server_config/ansible/files/data/certbot/www:/var/www/certbot
+      - /root/twa.ninja/website/public:/srv
+      - /root/twa.ninja/server_config/ansible/files/nginx.conf:/etc/nginx/nginx.conf
+      - /root/twa.ninja/server_config/ansible/files/data/certbot/conf:/etc/letsencrypt
+      - /root/twa.ninja/server_config/ansible/files/data/certbot/www:/var/www/certbot
     ports:
       - 80:80
       - 443:443
@@ -17,6 +17,6 @@ services:
     image: certbot/certbot
     restart: unless-stopped
     volumes:
-      - /home/tim/twa.ninja/server_config/data/certbot/conf:/etc/letsencrypt
-      - /home/tim/twa.ninja/server_config/data/certbot/www:/var/www/certbot
+      - /root/twa.ninja/server_config/ansible/files/data/certbot/conf:/etc/letsencrypt
+      - /root/twa.ninja/server_config/ansible/files/data/certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"

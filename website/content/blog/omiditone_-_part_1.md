@@ -17,7 +17,7 @@ My first step was to disassemble the device and figure out how to replace the so
 In doing that, I was able to control the pitch, and get some sounds out of it by sending MIDI commands to a Teensy board. See video below for one of the earliest tests.
 
 
-<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Q1Neo-n6\_t0" width="560"></iframe>
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Q1Neo-n6_t0" width="560"></iframe>
 
 
 Once I had basic MIDI control, I set out to map a resistance-to-pitch map so I could adjust to a specific resistance and get a specific pitch out reliably. It turns out that this was not going to work as I had envisioned. Not only were there some anaomolous spikes in output frequency, but the pitch mapped to specific resistances seemed to vary wildly depending on unknown variables (presumably temperature related, but it also seemed to be effected by the last notes played as well).

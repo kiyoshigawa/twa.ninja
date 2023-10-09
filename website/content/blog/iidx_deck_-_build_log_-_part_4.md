@@ -95,7 +95,7 @@ The rainbow wiki mode populated a smoothly transitioned version of the rainbow t
 The slow rotate mode populates the disk lighting with the smoothly faded rainbow pattern, but it rotates freely without input from the player in the direction the disk was last rotated. If the direction fo the disk changes, the direction of rotation changes as well.
 
 
-<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kAf1MVp\_5Xk?rel=0" width="560"></iframe>
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kAf1MVp_5Xk?rel=0" width="560"></iframe>
 
 
 **Lighting Mode 9: Random Rainbow**
@@ -122,7 +122,7 @@ This lighting mode has been nicknamed 'seizure mode' by those who have used it. 
 This lighting mode shows no colors on the disks at all, but the power for lighting is still on, and the buttons will still light up when pressed.
 
 
-<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/gq\_EYaebht4?rel=0" width="560"></iframe>
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/gq_EYaebht4?rel=0" width="560"></iframe>
 
 
 **Lighting Mode 12: Color Pulse**

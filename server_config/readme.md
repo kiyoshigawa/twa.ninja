@@ -25,3 +25,9 @@ ansible-playbook provision.yaml -i inventory
 ```
 
 With this done, the web server should be configured and running, and assuming that the firewall is correctly allowing access to the server, the website should be accessible from any browser.
+
+### Updating the Website Using Ansible
+If you've made a new commit to this website repo, you can automatically update the website with ansible using the following commands.
+```bash
+ansible-playbook update.yaml -i inventory
+```

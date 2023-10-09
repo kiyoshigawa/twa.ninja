@@ -1,0 +1,37 @@
+---
+- name: Initial Web Server Provisioning
+  hosts: web
+  remote_user: root
+
+  tasks:
+
+    - name: Update and upgrade all apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400 # One Day
+
+    - name: Update Website Repository to Latest
+      git:
+        repo: https://github.com/kiyoshigawa/twa.ninja
+        dest: ~/twa.ninja/
+        force: true
+
+    - name: Rebuild website using zola
+      ansible.builtin.command:
+        chdir: ~/twa.ninja/website
+        cmd: zola build
+
+    - name: Make website public directory accessible to www-data
+      copy:
+        src: ~/twa.ninja/website/public/
+        dest: /var/www/twa.ninja/
+        owner: www-data
+        group: www-data
+        mode: 0775
+        remote_src: true
+
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted

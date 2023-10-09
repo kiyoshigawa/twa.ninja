@@ -5,7 +5,7 @@
 
   tasks:
 
-  - name: make .bashrc colorful and add ll alias
+  - name: Make .bashrc colorful and add ll alias
     copy:
       dest: ~/.bashrc
       content: |
@@ -85,12 +85,12 @@
       dest: ~/twa.ninja/
       force: true
 
-  - name: building website using zola
+  - name: Build website using zola
     ansible.builtin.command:
       chdir: ~/twa.ninja/website
       cmd: zola build
 
-  - name: make website public directory accessible to www-data
+  - name: Make website public directory accessible to www-data
     copy:
       src: ~/twa.ninja/website/public/
       dest: /var/www/twa.ninja/
@@ -99,7 +99,7 @@
       mode: 0775
       remote_src: true
 
-  - name: copy basic website config to /etc/nginx/conf.d
+  - name: Copy basic website config to /etc/nginx/conf.d
     copy:
       src: ./files/twa.ninja.conf
       dest: /etc/nginx/conf.d/twa.ninja.conf

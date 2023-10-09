@@ -44,6 +44,9 @@
         - apt-transport-https
         - ca-certificates
         - software-properties-common
+        - nginx
+        - certbot
+        - python3-certbot-nginx
       state: latest
 
   - name: Setup ufw to allow ssh via port 22, but only from LAN network
@@ -67,30 +70,8 @@
       state: enabled
       default: deny
 
-  - name: Add Docker GPG apt Key
-    apt_key:
-      url: "https://download.docker.com/linux/debian/gpg"
-      state: present
-
-  - name: Add Docker Repository
-    apt_repository:
-      repo: "deb https://download.docker.com/linux/debian bookworm stable"
-      state: present
-      update_cache: true
-
-  - name: Update apt cache again now that docker repo is present
-    apt:
-      update_cache: yes
-
-  - name: Install docker and docker-compose using apt
-    apt:
-      name:
-        - docker
-        - docker-compose
-      state: latest
-
   - name: Download zola web installer
-    ansible.builtin.get_url:
+    get_url:
       url: https://github.com/barnumbirr/zola-debian/releases/download/v0.17.2-1/zola_0.17.2-1_amd64_bullseye.deb
       dest: ~/zola_installer.deb
 
@@ -99,20 +80,31 @@
       deb: ~/zola_installer.deb
 
   - name: Clone Website Repository
-    ansible.builtin.git:
+    git:
       repo: https://github.com/kiyoshigawa/twa.ninja
       dest: ~/twa.ninja/
+      force: true
 
   - name: building website using zola
     ansible.builtin.command:
       chdir: ~/twa.ninja/website
       cmd: zola build
 
-  - name: initialize letsencrypt certs using script
-    command:
-      cmd: ./init-letsencrypt.sh
-      chdir: /root/twa.ninja/server_config/files/
+  - name: make website public directory accessible to www-data
+    copy:
+      src: ~/twa.ninja/website/public/
+      dest: /var/www/twa.ninja/
+      owner: www-data
+      group: www-data
+      mode: 0775
+      remote_src: true
 
-  - name: start nginx server and certbot using docker-compose
-    community.docker.docker_compose:
-      project_src: /root/twa.ninja/server_config/files/
+  - name: copy basic website config to /etc/nginx/conf.d
+    copy:
+      src: ./files/twa.ninja.conf
+      dest: /etc/nginx/conf.d/twa.ninja.conf
+
+  - name: Restart nginx
+    service:
+      name: nginx
+      state: restarted

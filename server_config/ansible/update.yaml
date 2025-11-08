@@ -1,5 +1,5 @@
 ---
-- name: Initial Web Server Provisioning
+- name: Web Server Update
   hosts: web
   remote_user: root
 

@@ -10,6 +10,12 @@ if len(sys.argv) != 3:
 SCAN_DIR = sys.argv[1]
 PLAYLIST_OUTPUT_FILE = sys.argv[2]
 
+def remove_articles(artist_name):
+    articles = ["the", "a", "an", "and", "of", "in", "on", "at"] # Add more articles as needed
+    words = artist_name.lower().split()
+    filtered_words = [word for word in words if word not in articles]
+    return " ".join(filtered_words)
+
 def get_song_tags(filepath: str) -> Optional[dict]:
     """Extracts relevant tag data from a song file.
 
@@ -52,7 +58,7 @@ def get_song_tags(filepath: str) -> Optional[dict]:
             sort_date = 0
         tag_data = {
             "filepath": filepath,
-            "album_artist": album_artist.strip().lower(),
+            "album_artist": remove_articles(album_artist),
             "artist": artist.strip().lower(),
             "date": sort_date,
             "album": album.strip().lower(),

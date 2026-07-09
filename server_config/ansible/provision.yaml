@@ -4,110 +4,109 @@
   remote_user: root
 
   tasks:
+    - name: Make .bashrc colorful and add ll alias
+      copy:
+        dest: ~/.bashrc
+        content: |
+          export LS_OPTIONS='--color=auto'
+          eval "$(dircolors)"
+          alias ls='ls $LS_OPTIONS'
+          alias ll='ls $LS_OPTIONS -laph'
 
-  - name: Make .bashrc colorful and add ll alias
-    copy:
-      dest: ~/.bashrc
-      content: |
-        export LS_OPTIONS='--color=auto' 
-        eval "$(dircolors)"
-        alias ls='ls $LS_OPTIONS'
-        alias ll='ls $LS_OPTIONS -laph'
+    - name: Disallow SSH password authentication
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: "^PasswordAuthentication"
+        line: "PasswordAuthentication no"
+        state: present
+        validate: sshd -t -f %s
 
-  - name: Disallow SSH password authentication
-    lineinfile:
-      dest: /etc/ssh/sshd_config
-      regexp: "^PasswordAuthentication"
-      line: "PasswordAuthentication no"
-      state: present
-      validate: sshd -t -f %s
+    - name: Restart sshd
+      service:
+        name: sshd
+        state: restarted
 
-  - name: Restart sshd
-    service:
-      name: sshd
-      state: restarted
+    - name: Update and upgrade all apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400 # One Day
 
-  - name: Update and upgrade all apt packages
-    apt:
-      upgrade: yes
-      update_cache: yes
-      cache_valid_time: 86400 # One Day
+    - name: Install various packages using apt
+      apt:
+        name:
+          - ufw
+          - git
+          - vim
+          - lsb-release
+          - gnupg2
+          - apt-transport-https
+          - ca-certificates
+          - python3-debian
+          - nginx
+          - certbot
+          - python3-certbot-nginx
+        state: latest
 
-  - name: Install various packages using apt
-    apt:
-      name:
-        - ufw
-        - git
-        - vim
-        - lsb-release
-        - gnupg2
-        - apt-transport-https
-        - ca-certificates
-        - software-properties-common
-        - nginx
-        - certbot
-        - python3-certbot-nginx
-      state: latest
+    - name: Setup ufw to allow ssh via port 22, but only from LAN network
+      community.general.ufw:
+        rule: allow
+        port: 22
+        from_ip: 192.168.1.1/24
 
-  - name: Setup ufw to allow ssh via port 22, but only from LAN network
-    community.general.ufw:
-      rule: allow
-      port: 22
-      from_ip: 192.168.1.1/24
+    - name: Setup ufw to allow web server access via port 80
+      community.general.ufw:
+        rule: allow
+        port: 80
 
-  - name: Setup ufw to allow web server access via port 80
-    community.general.ufw:
-      rule: allow
-      port: 80
+    - name: Setup ufw to allow web server access via port 443
+      community.general.ufw:
+        rule: allow
+        port: 443
 
-  - name: Setup ufw to allow web server access via port 443
-    community.general.ufw:
-      rule: allow
-      port: 443
+    - name: Enable ufw firewall
+      community.general.ufw:
+        state: enabled
+        default: deny
 
-  - name: Enable ufw firewall
-    community.general.ufw:
-      state: enabled
-      default: deny
+    - name: Download zola web installer
+      get_url:
+        url: https://github.com/barnumbirr/zola-debian/releases/download/v0.17.2-1/zola_0.17.2-1_amd64_bullseye.deb
+        dest: ~/zola_installer.deb
 
-  - name: Download zola web installer
-    get_url:
-      url: https://github.com/barnumbirr/zola-debian/releases/download/v0.17.2-1/zola_0.17.2-1_amd64_bullseye.deb
-      dest: ~/zola_installer.deb
+    - name: Install zola SSB
+      apt:
+        deb: ~/zola_installer.deb
 
-  - name: Install zola SSB
-    apt:
-      deb: ~/zola_installer.deb
+    - name: Clone Website Repository
+      git:
+        repo: https://github.com/kiyoshigawa/twa.ninja
+        dest: ~/twa.ninja/
+        force: true
 
-  - name: Clone Website Repository
-    git:
-      repo: https://github.com/kiyoshigawa/twa.ninja
-      dest: ~/twa.ninja/
-      force: true
+    - name: Build website using zola
+      ansible.builtin.command:
+        chdir: ~/twa.ninja/website
+        cmd: zola build
 
-  - name: Build website using zola
-    ansible.builtin.command:
-      chdir: ~/twa.ninja/website
-      cmd: zola build
+    - name: Make website public directory accessible to www-data
+      copy:
+        src: ~/twa.ninja/website/public/
+        dest: /var/www/twa.ninja/
+        owner: www-data
+        group: www-data
+        mode: 0775
+        remote_src: true
 
-  - name: Make website public directory accessible to www-data
-    copy:
-      src: ~/twa.ninja/website/public/
-      dest: /var/www/twa.ninja/
-      owner: www-data
-      group: www-data
-      mode: 0775
-      remote_src: true
+    - name: Copy basic website config to /etc/nginx/conf.d
+      copy:
+        src: ./files/twa.ninja.conf
+        dest: /etc/nginx/conf.d/twa.ninja.conf
 
-  - name: Copy basic website config to /etc/nginx/conf.d
-    copy:
-      src: ./files/twa.ninja.conf
-      dest: /etc/nginx/conf.d/twa.ninja.conf
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted
 
-  - name: Restart nginx
-    service:
-      name: nginx
-      state: restarted
-
-  - name: Use Certbot to Set up HTTPS for twa.ninja
-    command: certbot --nginx -d twa.ninja -d www.twa.ninja -m tim@twa.ninja --agree-tos
+    - name: Use Certbot to Set up HTTPS for twa.ninja
+      command: certbot --nginx -d twa.ninja -d www.twa.ninja -m tim@twa.ninja --agree-tos

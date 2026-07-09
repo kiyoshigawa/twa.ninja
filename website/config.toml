@@ -10,8 +10,8 @@ compile_sass = true
 build_search_index = false
 
 [markdown.highlighting]
-# Whether to do syntax highlighting
-code = true
+theme = "one-dark-pro"
+style = "inline"
 
 [slugify]
 paths = "off"

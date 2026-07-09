@@ -175,3 +175,29 @@ Then locally, delete the broken state and retry:
 rm -f terraform.tfstate*
 tofu apply -var-file local.tfvars
 ```
+
+## Provisioning the LXC with Ansible
+
+All Ansible commands are run from the `server_config/ansible/` directory.
+
+### Initial provisioning
+
+Run this the first time to configure a fresh LXC:
+
+```bash
+cd server_config/ansible
+ansible-playbook provision.yaml -i inventory
+```
+
+This installs nginx, certbot, ufw, Zola, clones the website repo, builds the site with `zola build`, and sets up HTTPS via certbot.
+
+### Updating the website
+
+After pushing new content to the git repo, run this to pull and rebuild:
+
+```bash
+cd server_config/ansible
+ansible-playbook update.yaml -i inventory
+```
+
+This pulls the latest commit, rebuilds the site, and restarts nginx.

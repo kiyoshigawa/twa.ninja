@@ -48,11 +48,17 @@
           - python3-certbot-nginx
         state: latest
 
-    - name: Setup ufw to allow ssh via port 22, but only from LAN network
+    - name: Setup ufw to allow ssh via port 22 from LAN
       community.general.ufw:
         rule: allow
         port: 22
-        from_ip: 192.168.1.1/24
+        from_ip: 192.168.1.0/24
+
+    - name: Setup ufw to allow ssh via port 22 from VPN
+      community.general.ufw:
+        rule: allow
+        port: 22
+        from_ip: 192.168.21.0/24
 
     - name: Setup ufw to allow web server access via port 80
       community.general.ufw:
@@ -69,14 +75,16 @@
         state: enabled
         default: deny
 
-    - name: Download zola web installer
+    - name: Download Zola
       get_url:
-        url: https://github.com/barnumbirr/zola-debian/releases/download/v0.17.2-1/zola_0.17.2-1_amd64_bullseye.deb
-        dest: ~/zola_installer.deb
+        url: https://github.com/getzola/zola/releases/download/v0.22.1/zola-v0.22.1-x86_64-unknown-linux-gnu.tar.gz
+        dest: /tmp/zola.tar.gz
 
-    - name: Install zola SSB
-      apt:
-        deb: ~/zola_installer.deb
+    - name: Extract Zola
+      unarchive:
+        src: /tmp/zola.tar.gz
+        dest: /usr/local/bin/
+        remote_src: yes
 
     - name: Clone Website Repository
       git:

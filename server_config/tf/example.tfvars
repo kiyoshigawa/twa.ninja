@@ -1,9 +1,26 @@
-# Note that this file is just a dummy file, and you will need to rename it to
-# `local.tfvars` and input real data with it to get this to work. Never commit
-# your actual keys to a git repository.
-pm_url       = "https://127.0.0.1:8006/api2/json"
-pm_user      = "root@pam"
-pm_password  = "p@ssw0rd!"
+# Copy this file to local.tfvars and replace the values with your actual credentials.
+# Never commit local.tfvars to git.
 
-lxc_password = "p@ssw0rd!"
-ssh_keys     = "ssh-rsa KLANMcKJASDNCKJSDNCVKJNSDVc fake@email.com"
+# Proxmox API endpoint (your Proxmox host IP)
+pm_api_url    = "https://192.168.1.4:8006"
+
+# API token in the format: user@realm!tokenid=secret
+pm_api_token  = "terraform@pve!provider=your-token-secret"
+
+# Set to true if using a self-signed Proxmox TLS certificate
+pm_tls_insecure = true
+
+# LXC root password (for emergency console access)
+lxc_password = "your-password"
+
+# SSH public key for Ansible to authenticate to the LXC
+ssh_keys     = "ssh-ed25519 AAAA... your-public-key"
+
+# Proxmox node name
+pm_node_name = "your-proxmox-node"
+
+# Storage pool for the LXC root disk
+pm_storage   = "your-storage-pool"
+
+# LXC network bridge
+pm_bridge    = "vmbr1"

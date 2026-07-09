@@ -1,53 +1,50 @@
-resource "proxmox_lxc" "lxcs" {
-  for_each      = var.lxcs
-  target_node   = each.value.node_name
-  hostname      = each.value.hostname
-  searchdomain  = each.value.searchdomain
-  nameserver    = each.value.nameserver
-  unprivileged  = each.value.unprivileged
-  ostemplate    = var.lxc_debian_12
-  start         = true
-  onboot        = true
-  password      = var.lxc_password
-  vmid          = each.value.vmid
-
-  ssh_public_keys = <<-EOT
-	${var.ssh_keys}
-   EOT
-
-  cores        = each.value.cores
-  memory       = each.value.memory
-
-  rootfs {
-    storage  = each.value.storage
-    size     = each.value.rootfs_size
-  }
-
-  dynamic "mountpoint" {
-    for_each = each.value.mountpoint
-    content {
-      slot       = mountpoint.value.slot
-      key        = mountpoint.value.key
-      storage    = mountpoint.value.storage
-      mp         = mountpoint.value.mp
-      size       = mountpoint.value.size
-    }
-  }
-
-  dynamic "network" {
-    for_each = each.value.network
-    content {
-      name       = network.value.name
-      bridge     = network.value.bridge
-      ip         = network.value.ip
-      gw         = network.value.gw
-      hwaddr     = network.value.hwaddr
-    }
-  }
+resource "proxmox_virtual_environment_container" "twa_web" {
+  node_name     = var.pm_node_name
+  vm_id         = 201
+  unprivileged  = true
+  start_on_boot = true
 
   features {
-    keyctl    = each.value.keyctl
-    nesting   = each.value.nesting
-    mount     = each.value.mount
+    nesting = true
+  }
+
+  initialization {
+    hostname = "twa-web"
+
+    dns {
+      domain  = "timternet.local"
+      servers = ["192.168.1.1"]
+    }
+
+    ip_config {
+      ipv4 {
+        address = "192.168.2.7/24"
+        gateway = "192.168.2.1"
+      }
+    }
+
+    user_account {
+      password = var.lxc_password
+      keys     = [var.ssh_keys]
+    }
+  }
+
+  network_interface {
+    name   = "veth0"
+    bridge = var.pm_bridge
+  }
+
+  disk {
+    datastore_id = var.pm_storage
+    size         = 20
+  }
+
+  memory {
+    dedicated = 2048
+  }
+
+  operating_system {
+    template_file_id = "storage:vztmpl/debian-13-standard_13.1-2_amd64.tar.zst"
+    type             = "debian"
   }
 }

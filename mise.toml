@@ -1,0 +1,5 @@
+[tools]
+ansible = "latest"
+opentofu = "latest"
+pipx = "latest"
+python = "3.12"

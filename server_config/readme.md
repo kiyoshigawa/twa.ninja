@@ -1,33 +1,177 @@
-# Automatic Server Config with Terraform and Ansible
+# Automatic Server Config
 
-The files in this folder will be able to automatically set up a web server for my website on my proxmox server. In order to get it to actually work, there's a couple steps you will need to do first. The first step is to save a copy of the `example.tfvars` file as a new file names `local.tfvars` and provide valid credentials for the variables within. Note that you will need to have the ssh keys used in the `local.tfvars` file properly set up on your host computer for ansible to work as currently configured.
+This directory contains everything needed to set up and maintain the web server for twa.ninja on a Proxmox host. The setup runs on a local machine and uses:
 
-Once you've got a valid `local.tfvars` file, you need to run `terraform init` in the `/server_config/tf/` directory to install the proxmox plugin required to make terraform work.
+- **OpenTofu** — provisions the LXC container on Proxmox
+- **Ansible** — configures the container (nginx, certbot, firewall, Zola, etc.)
 
-After that, you need to run the following commands to set up the lxc containers on proxmox. Note that this will install the ssh keys in `local.tfvars` onto the lxc, which will be required for ssh authentication. If that key is not valid, you won't be able to provision the lxc using ansible in the future.
+## Prerequisites
 
-### Terraform Setup Commands
+These steps need to be done once per local machine and once per Proxmox host.
+
+### 1. Install mise
+
+[mise](https://mise.jdx.dev) is a dev tools version manager used to manage all the tools needed for this project.
+
+Check if mise is already installed:
+
 ```bash
-terraform init
-terraform validate
-terraform plan -out local.plan -var-file local.tfvars
-terraform apply local.plan
+mise --version
 ```
 
-After the LXC has been set up by terraform, you can use ansible to provision the server. You will need to have ansible installed on the host, and then you can run the following commands in the `/server_config/ansible/` to verify that you can connect to the new web server lxc, and then to provision the server and set up the website, including nginx, and letsencrypt.
+If not installed, download and run the install script, then follow the post-install instructions it prints:
 
-If you are using WSL as the ansible host, the default configuration is for the ansible directory to be world-writable when mounted. This causes ansible to ignore the `ansible.cfg` file by default for security reasons. In order to get the `ansible.cfg` file to be read (allowing the default user to match the configs), you will need to manually add an environment variable to allow use of the file before running commands: `export ANSIBLE_CONFIG=ansible.cfg`
-
-### Ansible Setup Commands
 ```bash
-ansible all -i inventory -m ping
-ansible-playbook provision.yaml -i inventory
+curl https://mise.jdx.dev/install.sh | sh
 ```
 
-With this done, the web server should be configured and running, and assuming that the firewall is correctly allowing access to the server, the website should be accessible from any browser.
+Add mise to your shell (the installer will print the exact line needed), then restart your shell or run `eval "$(~/.local/bin/mise activate)"`.
 
-### Updating the Website Using Ansible
-If you've made a new commit to this website repo, you can automatically update the website with ansible using the following commands.
+### 2. Install project tools
+
+From the root of this repository, run the following to install Python, pipx, Ansible, and OpenTofu as project-local tools:
+
 ```bash
-ansible-playbook update.yaml -i inventory
+cd /path/to/twa.ninja
+mise use python@3.12
+mise use pipx@latest
+mise use ansible@latest
+mise use opentofu@latest
+```
+
+This creates a `mise.toml` file in the repo root so the tools auto-activate whenever you `cd` into this directory. Verify everything installed correctly:
+
+```bash
+python3 --version
+pipx --version
+ansible --version
+tofu --version
+```
+
+You should see Python 3.12.x, pipx 1.x, Ansible 14.x, and OpenTofu 1.11.x (versions may differ).
+
+### 3. Generate SSH key pair
+
+Ansible connects to the LXC via SSH. Generate an ed25519 key pair:
+
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/your_key_name_here -N "" -C "your@email.com"
+```
+
+Choose a descriptive filename (e.g. `proxmox_id_ed25519`). The public key (`your_key_name.pub`) will be added to the LXC during OpenTofu provisioning so Ansible can log in.
+
+### 4. Proxmox host setup
+
+These steps are run in the Proxmox host's root shell (via web UI console or SSH).
+
+#### 4a. Create API token for OpenTofu
+
+OpenTofu needs an API token to manage LXCs. Create a dedicated user, role, and token:
+
+```bash
+# Add a service user
+pveum user add terraform@pve
+
+# Create a role with the privileges needed for LXC management
+pveum role add Terraform -privs "VM.Allocate VM.Audit VM.Clone VM.Config.Disk VM.Config.CPU VM.Config.Memory VM.Config.Network VM.Config.Options VM.PowerMgmt Datastore.Allocate Datastore.AllocateSpace Datastore.AllocateTemplate Datastore.Audit Pool.Allocate Sys.Audit Sys.Console Sys.Modify SDN.Use"
+
+# Grant the role to the user at the root level
+pveum acl modify / -user terraform@pve -role Terraform
+
+# Generate a token (save the output — it won't be shown again)
+pveum user token add terraform@pve provider --privsep=0
+```
+
+If a command later fails with a permission error, update the role to add the missing privilege and retry.
+
+#### 4b. Download the Debian LXC template
+
+```bash
+# Check available templates
+pveam available | grep debian-13
+
+# Download the template to the correct storage
+pveam download storage debian-13-standard_13.1-2_amd64.tar.zst
+```
+
+### 5. Create local.tfvars
+
+Copy `server_config/tf/example.tfvars` to `server_config/tf/local.tfvars` and fill in:
+
+- **Proxmox API URL** and **API token** (from step 4a)
+- **LXC root password** (for emergency console access)
+- **SSH public key** (from step 3)
+- **Proxmox node name**, **storage pool**, and **network bridge**
+
+```bash
+cp server_config/tf/example.tfvars server_config/tf/local.tfvars
+```
+
+Edit `local.tfvars` with your values. This file is gitignored and must never be committed.
+
+## Creating the LXC Container
+
+All OpenTofu commands are run from the `server_config/tf/` directory.
+
+### Initialize OpenTofu
+
+Downloads the bpg/proxmox provider plugin and sets up the backend:
+
+```bash
+cd server_config/tf
+tofu init
+```
+
+### Validate the configuration
+
+Checks that the config files are syntactically correct:
+
+```bash
+tofu validate
+```
+
+### Preview the changes
+
+Shows what resources will be created without actually making them:
+
+```bash
+tofu plan -var-file local.tfvars
+```
+
+Review the output. It should show one resource to add: `proxmox_virtual_environment_container.twa_web`.
+
+### Create the LXC
+
+```bash
+tofu apply -var-file local.tfvars
+```
+
+Type `yes` when prompted. If creation hangs for a long time, ctrl-C to end it and check the error. I ran into permission errors on the api user, which can be added/updated with the role add command above from step 4a.
+
+### Verify the LXC
+
+From the Proxmox host, check the container is running and has network access:
+
+```bash
+pct enter 201
+ip addr show veth0   # should show 192.168.2.7/24 (or whatever you set it to in local.tfvars and the ansible inventory file)
+ping -c 3 192.168.2.1 # this is the gateway IP
+```
+
+Exit the container with `exit` or Ctrl+D.
+
+### Cleanup (if something goes wrong)
+
+If OpenTofu times out or errors during create, clean up on the Proxmox host first:
+
+```bash
+pct stop <VMID>
+pct destroy <VMID>
+```
+
+Then locally, delete the broken state and retry:
+
+```bash
+rm -f terraform.tfstate*
+tofu apply -var-file local.tfvars
 ```

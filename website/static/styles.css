@@ -1,249 +1,262 @@
 :root {
-	--darkest-color: #111;
-	--darker-color: #222;
-	--dark-color: #333;
-	--bright-color: #bbb;
-	--brightest-color: #ddd;
+    --darkest-color: #111;
+    --darker-color: #222;
+    --dark-color: #333;
+    --bright-color: #bbb;
+    --brightest-color: #ddd;
 }
 
 * {
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
-	padding: 0;
-	margin: 0;
-	background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
 }
 
-h1, h2, h3, p {
-	padding-top: 8px;
-	padding-bottom: 8px;
+h1,
+h2,
+h3,
+p {
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
-ul, ol {
-	padding-left: 32px;
-	padding-bottom: 16px;
+ul,
+ol {
+    padding-left: 32px;
+    padding-bottom: 16px;
 }
 
 #footer {
-	font-size: 12px;
-	padding: 8px;
-	text-align: center;
+    font-size: 12px;
+    padding: 8px;
+    text-align: center;
 }
 
 body {
-	color: var(--brightest-color);
-	background-color: var(--darkest-color);
-	padding: 16px;
-	font-size: 16px;
+    color: var(--brightest-color);
+    background-color: var(--darkest-color);
+    padding: 16px;
+    font-size: 16px;
 }
 
 #header {
-	background-color: var(--darker-color);
-	padding: 12px;
-	border-radius: 8px;
-	text-align: center;
+    background-color: var(--darker-color);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
 }
 
 #body-content {
-	background-color: var(--darker-color);
-	padding: 16px;
-	border-radius: 8px;
+    background-color: var(--darker-color);
+    padding: 16px;
+    border-radius: 8px;
 }
 
-#header h1, #body-content h1 {
-	font-size: 28px;
-	width: 100%;
-	padding-bottom: 16px;
+#header h1,
+#body-content h1 {
+    font-size: 28px;
+    width: 100%;
+    padding-bottom: 16px;
 }
 
-#header h2, #body-content h2 {
-	font-size: 20px;
-	width: 100%;
-	padding-bottom: 0;
+#header h2,
+#body-content h2 {
+    font-size: 20px;
+    width: 100%;
+    padding-bottom: 0;
 }
 
 .main-page-title-link {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #content-holder {
-	font-family: 'Verdana', sans-serif;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1200px;
-	min-width: 350px;
-	background-color: var(--darkest-color);
+    font-family: "Verdana", sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    min-width: 350px;
+    background-color: var(--darkest-color);
 }
 
 #menu {
-	margin: 8px;
-	padding: 8px;
-	text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
+    margin: 8px;
+    padding: 8px;
 }
 
 .menu-item {
-	margin: 8px;
-	padding: 8px;
-	color: var(--darkest-color);
-	font-weight: bold;
-	background-color: #CCC;
-	border: 2px solid transparent;
-	border-radius: 8px;
+    margin: 8px;
+    padding: 8px;
+    color: var(--darkest-color);
+    font-weight: bold;
+    background-color: #ccc;
+    border: 2px solid transparent;
+    border-radius: 8px;
 }
 
 .menu-link {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .menu-item:hover {
-	background-color: var(--bright-color);
-	border: 2px solid var(--bright-color);
-	text-decoration: none;}
+    background-color: var(--bright-color);
+    border: 2px solid var(--bright-color);
+    text-decoration: none;
+}
 
 .blog-item-link {
-	display: block;
-	margin: 8px;
-	padding: 8px;
-	border-radius: 8px;
-	background-color: var(--darkest-color);
-	color: var(--brightest-color);
-	border: 2px solid transparent;
+    display: block;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: var(--darkest-color);
+    color: var(--brightest-color);
+    border: 2px solid transparent;
 }
 
 .blog-item-link:hover {
-	background-color: var(--darker-color);
-	border: 2px solid var(--bright-color);
+    background-color: var(--darker-color);
+    border: 2px solid var(--bright-color);
 }
 
 .blog-item-link:hover .blog-item-blurb-holder {
-	background-color: var(--dark-color);
+    background-color: var(--dark-color);
 }
 
 .blog-item-blurb-holder {
-	text-align: left;
-	display: flex;
-	max-height: 100%;
-	max-width: 100%;
-	border-radius: 8px;
-	background-color: var(--darker-color);
-	color: var(--brightest-color);
+    text-align: left;
+    display: flex;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    background-color: var(--darker-color);
+    color: var(--brightest-color);
 }
 
 .blog-item-link {
-	text-align: center;
-	text-decoration: none;
+    text-align: center;
+    text-decoration: none;
 }
 
 .blog-item-title {
-	display: block;
-	font-size: 24px;
-	padding-top: 8px;
-	padding-bottom: 8px;
+    display: block;
+    font-size: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .blog-item-image {
-	display: block;
-	max-height: 240px;
-	max-width: 40%;
-	padding: 8px;
+    display: block;
+    max-height: 240px;
+    max-width: 40%;
+    padding: 8px;
 }
 
 .blog-item-image img {
-	max-height: 100%;
-	max-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .blog-item-blurb {
-	display: block;
-	padding: 8px;
-	max-height: 240px;
-	overflow-clip: 240px;
-	overflow:hidden;
-	text-overflow: ellipsis;
-	mask-image: linear-gradient(
-			rgba(221, 221, 221, 1.0) 0%,
-			rgba(221, 221, 221, 1.0) 60%,
-			rgba(221, 221, 221, 0.7) 70%,
-			rgba(221, 221, 221, 0.5) 80%,
-			rgba(221, 221, 221, 0.2) 80%,
-			rgba(221, 221, 221, 0.0) 100%
-	);
+    display: block;
+    padding: 8px;
+    max-height: 240px;
+    overflow-clip: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    mask-image: linear-gradient(
+        rgba(221, 221, 221, 1) 0%,
+        rgba(221, 221, 221, 1) 60%,
+        rgba(221, 221, 221, 0.7) 70%,
+        rgba(221, 221, 221, 0.5) 80%,
+        rgba(221, 221, 221, 0.2) 80%,
+        rgba(221, 221, 221, 0) 100%
+    );
 }
 
-.post-body-image-holder, .post-image-holder {
-	width: 100%
+.post-body-image-holder,
+.post-image-holder {
+    width: 100%;
 }
 
-.post-body-image, .post-image {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	border: solid transparent 2px;
-	max-width: 100%;
+.post-body-image,
+.post-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid transparent 2px;
+    max-width: 100%;
 }
 
-.post-body-image:hover, .post-image:hover {
-	border: solid var(--brightest-color) 2px;
+.post-body-image:hover,
+.post-image:hover {
+    border: solid var(--brightest-color) 2px;
 }
 
 .post-image-holder + .post-image-holder {
-	margin-top: 8px;
+    margin-top: 8px;
 }
 
 .blog-post-content img {
-	max-width: 100%;
-	max-height: 400px;
+    max-width: 100%;
+    max-height: 400px;
 }
 
 .blog-post-content iframe {
-	display: block;
-	max-width: 100%;
-	max-height: 400px;
-	margin-left: auto;
-	margin-right: auto;
-	border: solid transparent 2px;
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid transparent 2px;
 }
 
 .blog-post-content iframe:hover {
-	border: solid var(--bright-color) 2px;
+    border: solid var(--bright-color) 2px;
 }
 
 .post-files {
-	margin-top: 16px;
-	padding: 8px;
-	display: block;
-	background-color: var(--darkest-color);
-	border-radius: 4px;
+    margin-top: 16px;
+    padding: 8px;
+    display: block;
+    background-color: var(--darkest-color);
+    border-radius: 4px;
 }
 
 .post-file {
-	padding-bottom: 8px;
+    padding-bottom: 8px;
 }
 
 .post-file a {
-	padding: 8px;
-	display: block;
-	background-color: var(--darker-color);
-	border-radius: 4px;
-	border: 2px solid transparent;
+    padding: 8px;
+    display: block;
+    background-color: var(--darker-color);
+    border-radius: 4px;
+    border: 2px solid transparent;
 }
 
 .post-file a:hover {
-	background-color: var(--dark-color);
-	border: 2px solid var(--bright-color);
+    background-color: var(--dark-color);
+    border: 2px solid var(--bright-color);
 }
 
 .file-editor {
-	margin: 8px;
-	padding: 8px;
-	color: var(--dark-color);
-	background-color: var(--brightest-color);
+    margin: 8px;
+    padding: 8px;
+    color: var(--dark-color);
+    background-color: var(--brightest-color);
 }
 
 .editor-file-list {
-	margin: 8px;
-	padding: 8px;
-	background-color: var(--bright-color);
+    margin: 8px;
+    padding: 8px;
+    background-color: var(--bright-color);
 }

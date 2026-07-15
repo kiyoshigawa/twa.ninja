@@ -19,11 +19,11 @@ The keyboards run on software generated at [kbfirmware.com](http://kbfirmware.co
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/4x4_keyboard_cases/2018-07-08-17.26.17.jpg">
-<img class="post-image" src="/files/4x4_keyboard_cases/2018-07-08-17.26.17.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/4x4_keyboard_cases/2018-07-08-17.26.17.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/4x4_keyboard_cases/2018-07-08-17.26.35.jpg">
-<img class="post-image" src="/files/4x4_keyboard_cases/2018-07-08-17.26.35.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/4x4_keyboard_cases/2018-07-08-17.26.35.jpg" title="" alt=""></a>
 </div>
 </div>
 <div class="post-files">

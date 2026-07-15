@@ -34,7 +34,7 @@ My old blog (2 versions ago) had an automated process for adding images and file
            target="_blank" 
            href="/files/{blog_slug}/{image_name.ext}">
             <img class="post-image" 
-                 src="/files/{blog_slug}/{image_name.ext}" 
+                 src="/thumbs/files/{blog_slug}/{image_name.ext}" 
                  title="{Image Title Text}" 
                  alt="{Image Alt Text}">
         </a>

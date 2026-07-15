@@ -65,19 +65,19 @@ I'm sure as I work through implementing these changes, I will come up with some 
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_3/enclosure.jpg">
-<img class="post-image" src="/files/omiditone_-_part_3/enclosure.jpg" title="oMIDItone Enclosure" alt="oMIDItone Enclosure"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/enclosure.jpg" title="oMIDItone Enclosure" alt="oMIDItone Enclosure"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_3/back_wiring.jpg">
-<img class="post-image" src="/files/omiditone_-_part_3/back_wiring.jpg" title="oMIDItone Back Wiring" alt="oMIDItone Back Wiring"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/back_wiring.jpg" title="oMIDItone Back Wiring" alt="oMIDItone Back Wiring"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_3/back_wiring_2.jpg">
-<img class="post-image" src="/files/omiditone_-_part_3/back_wiring_2.jpg" title="oMIDItone Back Wiring 2" alt="oMIDItone Back Wiring 2"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/back_wiring_2.jpg" title="oMIDItone Back Wiring 2" alt="oMIDItone Back Wiring 2"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_3/servo_wiring.jpg">
-<img class="post-image" src="/files/omiditone_-_part_3/servo_wiring.jpg" title="oMIDItone Servo Wiring" alt="oMIDItone Servo Wiring"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/servo_wiring.jpg" title="oMIDItone Servo Wiring" alt="oMIDItone Servo Wiring"></a>
 </div>
 </div>
 <div class="post-files">

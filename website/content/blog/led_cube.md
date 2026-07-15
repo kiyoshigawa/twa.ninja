@@ -16,19 +16,19 @@ This is an LED cube I made from a minimalist arduino, some resistors, and a bunc
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/led_cube/2018-05-29-20.25.44.jpg">
-<img class="post-image" src="/files/led_cube/2018-05-29-20.25.44.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/led_cube/2018-05-29-20.25.44.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/led_cube/2018-05-29-20.26.11.jpg">
-<img class="post-image" src="/files/led_cube/2018-05-29-20.26.11.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/led_cube/2018-05-29-20.26.11.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/led_cube/2018-05-29-20.25.38.jpg">
-<img class="post-image" src="/files/led_cube/2018-05-29-20.25.38.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/led_cube/2018-05-29-20.25.38.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/led_cube/2018-05-29-20.25.57.jpg">
-<img class="post-image" src="/files/led_cube/2018-05-29-20.25.57.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/led_cube/2018-05-29-20.25.57.jpg" title="" alt=""></a>
 </div>
 </div>
 <div class="post-files">

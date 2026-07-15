@@ -46,6 +46,7 @@
           - nginx
           - certbot
           - python3-certbot-nginx
+          - python3-pil
         state: latest
 
     - name: Setup ufw to allow ssh via port 22 from LAN
@@ -92,6 +93,13 @@
         dest: ~/twa.ninja/
         force: true
 
+    - name: Generate image thumbnails
+      ansible.builtin.command:
+        chdir: ~/twa.ninja/website
+        cmd: python3 generate-thumbs.py
+      register: thumbs_result
+      changed_when: "' 0 thumbnails' not in thumbs_result.stdout"
+
     - name: Build website using zola
       ansible.builtin.command:
         chdir: ~/twa.ninja/website
@@ -101,7 +109,7 @@
       copy:
         src: ~/twa.ninja/website/public/
         dest: /var/www/twa.ninja/
-        owner: www-data
+        owner: root
         group: www-data
         mode: 0775
         remote_src: true

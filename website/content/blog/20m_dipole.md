@@ -13,18 +13,18 @@ I just made a very simple 20m dipole. It's two lengths of wire connected to an S
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/20m_dipole/swr-for-dipole-first-attempt.png">
-<img class="post-image" src="/files/20m_dipole/swr-for-dipole-first-attempt.png" title="SWR Without Tuning" alt="SWR Without Tuning"></a>
+<img class="post-image" src="/thumbs/files/20m_dipole/swr-for-dipole-first-attempt.png" title="SWR Without Tuning" alt="SWR Without Tuning"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/20m_dipole/swr-for-dipole-tuned.png">
-<img class="post-image" src="/files/20m_dipole/swr-for-dipole-tuned.png" title="All HF - Tuned" alt="All HF - Tuned"></a>
+<img class="post-image" src="/thumbs/files/20m_dipole/swr-for-dipole-tuned.png" title="All HF - Tuned" alt="All HF - Tuned"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/20m_dipole/swr-for-dipole-tuned-20m.png">
-<img class="post-image" src="/files/20m_dipole/swr-for-dipole-tuned-20m.png" title="20m Band - Tuned" alt="20m Band - Tuned"></a>
+<img class="post-image" src="/thumbs/files/20m_dipole/swr-for-dipole-tuned-20m.png" title="20m Band - Tuned" alt="20m Band - Tuned"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/20m_dipole/20m-waterfall-pre-fm-filter.png">
-<img class="post-image" src="/files/20m_dipole/20m-waterfall-pre-fm-filter.png" title="FM Harmonics Waterfall" alt="FM Harmonics Waterfall"></a>
+<img class="post-image" src="/thumbs/files/20m_dipole/20m-waterfall-pre-fm-filter.png" title="FM Harmonics Waterfall" alt="FM Harmonics Waterfall"></a>
 </div>
 </div>

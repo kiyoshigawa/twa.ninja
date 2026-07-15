@@ -11,7 +11,7 @@ twa.ninja - Blog
       <a class="blog-item-link" href="{{ page.permalink | safe }}">
         <strong class="blog-item-title">{{ page.title }}</strong>
         <span class="blog-item-blurb-holder">
-          <img class="blog-item-image" src="{{ page.extra.image | safe }}" title="{{ page.title }} cover image" alt="{{ page.title }} cover image">
+          <img class="blog-item-image" src="/thumbs{{ page.extra.image | safe }}" title="{{ page.title }} cover image" alt="{{ page.title }} cover image">
           <span class="blog-item-blurb">
             <p>Date Published: {{ page.date }}</p>
             <p>{{ page.extra.blurb | safe }}</p>

@@ -19,22 +19,22 @@ I finished it with two coats of shellac that I mixed myself from flakes. It seem
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/dovetail_utensil_box/441305-438x.jpg">
-<img class="post-image" src="/files/dovetail_utensil_box/441305-438x.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/dovetail_utensil_box/441305-438x.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/dovetail_utensil_box/441308-438x.jpg">
-<img class="post-image" src="/files/dovetail_utensil_box/441308-438x.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/dovetail_utensil_box/441308-438x.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/dovetail_utensil_box/441309-438x.jpg">
-<img class="post-image" src="/files/dovetail_utensil_box/441309-438x.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/dovetail_utensil_box/441309-438x.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/dovetail_utensil_box/441314-438x.jpg">
-<img class="post-image" src="/files/dovetail_utensil_box/441314-438x.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/dovetail_utensil_box/441314-438x.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/dovetail_utensil_box/441311-438x.jpg">
-<img class="post-image" src="/files/dovetail_utensil_box/441311-438x.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/dovetail_utensil_box/441311-438x.jpg" title="" alt=""></a>
 </div>
 </div>

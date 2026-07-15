@@ -37,46 +37,46 @@ The tT members from Provo/Orem that are still around will still occasionally mee
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_20151212_235539.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_20151212_235539.jpg" title="Folks at 801 Labs circa 2015" alt="Folks at 801 Labs circa 2015"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_20151212_235539.jpg" title="Folks at 801 Labs circa 2015" alt="Folks at 801 Labs circa 2015"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/2014-08-06.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/2014-08-06.jpg" title="Isaac Standing on his CNC Table" alt="Isaac Standing on his CNC Table"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/2014-08-06.jpg" title="Isaac Standing on his CNC Table" alt="Isaac Standing on his CNC Table"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/DSCF3094.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/DSCF3094.jpg" title="The Founders Wall at tT Circa 2011" alt="The Founders Wall at tT Circa 2011"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/DSCF3094.jpg" title="The Founders Wall at tT Circa 2011" alt="The Founders Wall at tT Circa 2011"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_0052.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_0052.jpg" title="THE MOON" alt="THE MOON"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_0052.jpg" title="THE MOON" alt="THE MOON"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_0068.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_0068.jpg" title="tT circa 2011" alt="tT circa 2011"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_0068.jpg" title="tT circa 2011" alt="tT circa 2011"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_0148.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_0148.jpg" title="tT Circa 2011" alt="tT Circa 2011"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_0148.jpg" title="tT Circa 2011" alt="tT Circa 2011"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_0943.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_0943.jpg" title="d3c4f circa 2010" alt="d3c4f circa 2010"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_0943.jpg" title="d3c4f circa 2010" alt="d3c4f circa 2010"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_1295.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_1295.jpg" title="The Pirate Flag at tT" alt="The Pirate Flag at tT"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_1295.jpg" title="The Pirate Flag at tT" alt="The Pirate Flag at tT"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_1312.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_1312.jpg" title="tT Circa 2010" alt="tT Circa 2010"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_1312.jpg" title="tT Circa 2010" alt="tT Circa 2010"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_3012.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_3012.jpg" title="Alex sorting spare parts" alt="Alex sorting spare parts"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_3012.jpg" title="Alex sorting spare parts" alt="Alex sorting spare parts"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/utah_hackerspace_history/IMG_20121216_031648.jpg">
-<img class="post-image" src="/files/utah_hackerspace_history/IMG_20121216_031648.jpg" title="The desks at tT in Orem circa 2012" alt="The desks at tT in Orem circa 2012"></a>
+<img class="post-image" src="/thumbs/files/utah_hackerspace_history/IMG_20121216_031648.jpg" title="The desks at tT in Orem circa 2012" alt="The desks at tT in Orem circa 2012"></a>
 </div>
 </div>

@@ -16,23 +16,23 @@ It was designed to work with any VESA mount monitor, and as far as software/hard
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/4-player_mame_cabinet/mame-sketchup-complete-front.jpg">
-<img class="post-image" src="/files/4-player_mame_cabinet/mame-sketchup-complete-front.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/4-player_mame_cabinet/mame-sketchup-complete-front.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/4-player_mame_cabinet/mame-sketchup-complete-rear.jpg">
-<img class="post-image" src="/files/4-player_mame_cabinet/mame-sketchup-complete-rear.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/4-player_mame_cabinet/mame-sketchup-complete-rear.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/4-player_mame_cabinet/mame-sketchup-partial-interior.jpg">
-<img class="post-image" src="/files/4-player_mame_cabinet/mame-sketchup-partial-interior.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/4-player_mame_cabinet/mame-sketchup-partial-interior.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/4-player_mame_cabinet/mame-sketchup-exploded.jpg">
-<img class="post-image" src="/files/4-player_mame_cabinet/mame-sketchup-exploded.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/4-player_mame_cabinet/mame-sketchup-exploded.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/4-player_mame_cabinet/1527516355_arcade-bezel.png">
-<img class="post-image" src="/files/4-player_mame_cabinet/1527516355_arcade-bezel.png" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/4-player_mame_cabinet/1527516355_arcade-bezel.png" title="" alt=""></a>
 </div>
 </div>
 <div class="post-files">

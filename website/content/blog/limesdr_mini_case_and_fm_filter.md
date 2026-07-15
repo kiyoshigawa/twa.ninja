@@ -13,19 +13,19 @@ I made a laser-cut acrylic case for my LimeSDR Mini. CAD Files below. I also ins
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/limesdr_mini_case_and_fm_filter/20m-waterfall-post-fm-filter.png">
-<img class="post-image" src="/files/limesdr_mini_case_and_fm_filter/20m-waterfall-post-fm-filter.png" title="20m Waterfall with FM Filter" alt="20m Waterfall with FM Filter"></a>
+<img class="post-image" src="/thumbs/files/limesdr_mini_case_and_fm_filter/20m-waterfall-post-fm-filter.png" title="20m Waterfall with FM Filter" alt="20m Waterfall with FM Filter"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/limesdr_mini_case_and_fm_filter/1527650693_20m-waterfall-pre-fm-filter.png">
-<img class="post-image" src="/files/limesdr_mini_case_and_fm_filter/1527650693_20m-waterfall-pre-fm-filter.png" title="20m Waterfall without FM Filter" alt="20m Waterfall without FM Filter"></a>
+<img class="post-image" src="/thumbs/files/limesdr_mini_case_and_fm_filter/1527650693_20m-waterfall-pre-fm-filter.png" title="20m Waterfall without FM Filter" alt="20m Waterfall without FM Filter"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/limesdr_mini_case_and_fm_filter/2018-05-29-21.13.47.jpg">
-<img class="post-image" src="/files/limesdr_mini_case_and_fm_filter/2018-05-29-21.13.47.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/limesdr_mini_case_and_fm_filter/2018-05-29-21.13.47.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/limesdr_mini_case_and_fm_filter/2018-05-29-21.14.02.jpg">
-<img class="post-image" src="/files/limesdr_mini_case_and_fm_filter/2018-05-29-21.14.02.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/limesdr_mini_case_and_fm_filter/2018-05-29-21.14.02.jpg" title="" alt=""></a>
 </div>
 </div>
 <div class="post-files">

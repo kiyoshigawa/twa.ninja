@@ -22,14 +22,14 @@ I just took it off a shelf, dusted it off, and filmed this video of it still wor
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/animatronic_r2-d2/img-0931.jpg">
-<img class="post-image" src="/files/animatronic_r2-d2/img-0931.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/animatronic_r2-d2/img-0931.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/animatronic_r2-d2/img-0944.jpg">
-<img class="post-image" src="/files/animatronic_r2-d2/img-0944.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/animatronic_r2-d2/img-0944.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/animatronic_r2-d2/img-0945.jpg">
-<img class="post-image" src="/files/animatronic_r2-d2/img-0945.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/animatronic_r2-d2/img-0945.jpg" title="" alt=""></a>
 </div>
 </div>

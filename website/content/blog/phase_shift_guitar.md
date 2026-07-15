@@ -19,19 +19,19 @@ See below for pictures and the CAD file for the acrylic and Plywood cutouts file
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/phase_shift_guitar/2018-05-29-21.11.28.jpg">
-<img class="post-image" src="/files/phase_shift_guitar/2018-05-29-21.11.28.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/phase_shift_guitar/2018-05-29-21.11.28.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/phase_shift_guitar/2018-05-29-21.11.45.jpg">
-<img class="post-image" src="/files/phase_shift_guitar/2018-05-29-21.11.45.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/phase_shift_guitar/2018-05-29-21.11.45.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/phase_shift_guitar/2018-05-29-21.12.02.jpg">
-<img class="post-image" src="/files/phase_shift_guitar/2018-05-29-21.12.02.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/phase_shift_guitar/2018-05-29-21.12.02.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/phase_shift_guitar/2018-05-29-21.11.54.jpg">
-<img class="post-image" src="/files/phase_shift_guitar/2018-05-29-21.11.54.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/phase_shift_guitar/2018-05-29-21.11.54.jpg" title="" alt=""></a>
 </div>
 </div>
 <div class="post-files">

@@ -91,15 +91,15 @@ My next steps will be to redesign the PCB, using an I2C PCA9685 controller to co
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_2/frequency-stabilization-testing.png">
-<img class="post-image" src="/files/omiditone_-_part_2/frequency-stabilization-testing.png" title="Frequency Stabilization Testing" alt="Frequency Stabilization Testing"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_2/frequency-stabilization-testing.png" title="Frequency Stabilization Testing" alt="Frequency Stabilization Testing"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_2/best-fit-chart.png">
-<img class="post-image" src="/files/omiditone_-_part_2/best-fit-chart.png" title="Best Fit Chart" alt="Best Fit Chart"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_2/best-fit-chart.png" title="Best Fit Chart" alt="Best Fit Chart"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_2/front-traces-traced.png">
-<img class="post-image" src="/files/omiditone_-_part_2/front-traces-traced.png" title="Front Traces Traced" alt="Front Traces Traced"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_2/front-traces-traced.png" title="Front Traces Traced" alt="Front Traces Traced"></a>
 </div>
 </div>
 <div class="post-files">

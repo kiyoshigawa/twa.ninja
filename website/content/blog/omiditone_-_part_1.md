@@ -34,31 +34,31 @@ You'll note that this is labeled part 1. Once I had basic functionality, and I w
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_1/2018-03-15-20.41.16.jpg">
-<img class="post-image" src="/files/omiditone_-_part_1/2018-03-15-20.41.16.jpg" title="Original Board for a Single oMIDItone" alt="Original Board for a Single oMIDItone"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_1/2018-03-15-20.41.16.jpg" title="Original Board for a Single oMIDItone" alt="Original Board for a Single oMIDItone"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_1/2018-12-20-15.02.48.jpg">
-<img class="post-image" src="/files/omiditone_-_part_1/2018-12-20-15.02.48.jpg" title="Speaker Wire Connections - B Positive, BW GND." alt="Speaker Wire Connections - B Positive, BW GND."></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_1/2018-12-20-15.02.48.jpg" title="Speaker Wire Connections - B Positive, BW GND." alt="Speaker Wire Connections - B Positive, BW GND."></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_1/2018-12-20-15.04.04.jpg">
-<img class="post-image" src="/files/omiditone_-_part_1/2018-12-20-15.04.04.jpg" title="Soft Pot Replacement Connections - O Positive, OW Negative (I think)" alt="Soft Pot Replacement Connections - O Positive, OW Negative (I think)"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_1/2018-12-20-15.04.04.jpg" title="Soft Pot Replacement Connections - O Positive, OW Negative (I think)" alt="Soft Pot Replacement Connections - O Positive, OW Negative (I think)"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_1/2018-12-20-15.01.34.jpg">
-<img class="post-image" src="/files/omiditone_-_part_1/2018-12-20-15.01.34.jpg" title="Disassembled Circuit with Speaker and Battery Connections." alt="Disassembled Circuit with Speaker and Battery Connections."></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_1/2018-12-20-15.01.34.jpg" title="Disassembled Circuit with Speaker and Battery Connections." alt="Disassembled Circuit with Speaker and Battery Connections."></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_1/2019-03-23-07.41.06.jpg">
-<img class="post-image" src="/files/omiditone_-_part_1/2019-03-23-07.41.06.jpg" title="Mostly Assembled oMIDItone with wire routing" alt="Mostly Assembled oMIDItone with wire routing"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_1/2019-03-23-07.41.06.jpg" title="Mostly Assembled oMIDItone with wire routing" alt="Mostly Assembled oMIDItone with wire routing"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_1/2019-03-23-07.44.03.jpg">
-<img class="post-image" src="/files/omiditone_-_part_1/2019-03-23-07.44.03.jpg" title="Hot Glue for Strain Relief" alt="Hot Glue for Strain Relief"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_1/2019-03-23-07.44.03.jpg" title="Hot Glue for Strain Relief" alt="Hot Glue for Strain Relief"></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/omiditone_-_part_1/jitter-sample-chart.png">
-<img class="post-image" src="/files/omiditone_-_part_1/jitter-sample-chart.png" title="Jitter and Frequency Anomaly Chart" alt="Jitter and Frequency Anomaly Chart"></a>
+<img class="post-image" src="/thumbs/files/omiditone_-_part_1/jitter-sample-chart.png" title="Jitter and Frequency Anomaly Chart" alt="Jitter and Frequency Anomaly Chart"></a>
 </div>
 </div>
 <div class="post-files">

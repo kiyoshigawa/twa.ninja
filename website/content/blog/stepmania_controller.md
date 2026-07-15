@@ -16,15 +16,15 @@ I know I'd go for a Teensy LC if I made another one of these, and maybe give it 
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/stepmania_controller/2018-05-29-20.50.34.jpg">
-<img class="post-image" src="/files/stepmania_controller/2018-05-29-20.50.34.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/stepmania_controller/2018-05-29-20.50.34.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/stepmania_controller/2018-05-29-20.50.26.jpg">
-<img class="post-image" src="/files/stepmania_controller/2018-05-29-20.50.26.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/stepmania_controller/2018-05-29-20.50.26.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/stepmania_controller/2018-05-29-20.51.39.jpg">
-<img class="post-image" src="/files/stepmania_controller/2018-05-29-20.51.39.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/stepmania_controller/2018-05-29-20.51.39.jpg" title="" alt=""></a>
 </div>
 </div>
 <div class="post-files">

@@ -4,7 +4,6 @@
   remote_user: root
 
   tasks:
-
     - name: Update and upgrade all apt packages
       apt:
         upgrade: yes
@@ -16,17 +15,32 @@
         repo: https://github.com/kiyoshigawa/twa.ninja
         dest: ~/twa.ninja/
         force: true
+      register: git_result
+
+    - name: Install Pillow for thumbnail generation
+      apt:
+        name: python3-pil
+        state: present
+
+    - name: Generate image thumbnails
+      ansible.builtin.command:
+        chdir: ~/twa.ninja/website
+        cmd: python3 generate-thumbs.py
+      register: thumbs_result
+      changed_when: "' 0 thumbnails' not in thumbs_result.stdout"
 
     - name: Rebuild website using zola
       ansible.builtin.command:
         chdir: ~/twa.ninja/website
         cmd: zola build
+      when: git_result.changed or thumbs_result.changed
+      register: zola_result
 
     - name: Make website public directory accessible to www-data
       copy:
         src: ~/twa.ninja/website/public/
         dest: /var/www/twa.ninja/
-        owner: www-data
+        owner: root
         group: www-data
         mode: 0775
         remote_src: true

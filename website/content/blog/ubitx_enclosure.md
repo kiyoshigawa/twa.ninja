@@ -13,35 +13,35 @@ This is an enclosure I made for the uBitX out of 1/8" Acrylic. There's a bunch o
 <div class="post-images">
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-11.44.47.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-11.44.47.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-11.44.47.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-11.44.57.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-11.44.57.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-11.44.57.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-11.44.52.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-11.44.52.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-11.44.52.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-12.06.47.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-12.06.47.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-12.06.47.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-11.42.17.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-11.42.17.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-11.42.17.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-11.42.24.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-11.42.24.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-11.42.24.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-11.42.22.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-11.42.22.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-11.42.22.jpg" title="" alt=""></a>
 </div>
 <div class="post-image-holder">
 <a class="image_link" target="_blank" href="/files/ubitx_enclosure/2018-05-13-11.42.15.jpg">
-<img class="post-image" src="/files/ubitx_enclosure/2018-05-13-11.42.15.jpg" title="" alt=""></a>
+<img class="post-image" src="/thumbs/files/ubitx_enclosure/2018-05-13-11.42.15.jpg" title="" alt=""></a>
 </div>
 </div>
 <div class="post-files">

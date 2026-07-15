@@ -11,7 +11,7 @@ twa.ninja - {{ page.title }}
     <p>Date Published: {{ page.date }}</p>
     <div class="post-images">
       <a class="image-link" target="_blank" href="{{ page.extra.image }}">
-        <img class="post-image" src="{{ page.extra.image }}" title="{{ page.title }} cover image" alt="{{ page.title }} cover image">
+        <img class="post-image" src="/thumbs{{ page.extra.image }}" title="{{ page.title }} cover image" alt="{{ page.title }} cover image">
       </a>
     </div>
     {{ page.content | safe }}

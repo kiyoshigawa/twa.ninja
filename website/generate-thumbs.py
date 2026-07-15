@@ -14,7 +14,7 @@ SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
 THUMB_HEIGHT = 400
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 SOURCE_DIR = STATIC_DIR / "files"
-THUMBS_DIR = STATIC_DIR / "thumbs"
+THUMBS_DIR = STATIC_DIR / "thumbs" / "files"
 
 
 def is_animated_gif(path: Path) -> bool:

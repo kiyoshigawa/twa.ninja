@@ -23,7 +23,7 @@ Some basic thoughts on how the lighting modes function. I have a colors.h file w
 To change to a lighting mode, toggle the MOD button to the on position, and press one of the 14 LM keys as shown in this handy diagram. R+ and R- will switch rainbows when the MOD key is engaged. The 'Esc' button sends an escape keyboard button press when the mod button is engaged (so I can exit the program with the controller as needed), and the 'Go' button sends Windows Key + 5, as that is where I have my shortcut to launch Lunatic Rave 2 in my taskbar. If you want to map them to something else, it's easy to edit in the source code. To resume normal play, disengage the MOD button.
 
 
-[![](/files/iidx_deck_-_build_log_-_part_4/lighting-control-buttons.png)](/files/iidx_deck_-_build_log_-_part_4/lighting-control-buttons.png)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_4/lighting-control-buttons.png)](/files/iidx_deck_-_build_log_-_part_4/lighting-control-buttons.png)
 
 
 **Lighting Mode 1: Solid Color**

@@ -17,37 +17,37 @@ So, this is a project I started back in 2009 at HackSLC, predating even the Tran
 These first two pics are of my trying along this path back at tT in Provo. Not a lot of records form that time. One shows the unmodified IIDX america controller, and the other shows my first attempt at a disk. It spun well, but I never got the hall effect sensor and magnet array inside to work right.
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/img-20120209-001135.jpg)](/files/iidx_deck_-_build_log_-_part_1/img-20120209-001135.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/img-20120209-001135.jpg)](/files/iidx_deck_-_build_log_-_part_1/img-20120209-001135.jpg)
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/img-2765.jpg)](/files/iidx_deck_-_build_log_-_part_1/img-2765.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/img-2765.jpg)](/files/iidx_deck_-_build_log_-_part_1/img-2765.jpg)
 
 
 We can now skip forward a few years to 2015. I was mid-burnout phase from after Elefu, much more into woodworking than electronics, and decided to revisit the controller project. I came up with a totally new design, based around the new woodworking skills I had acquired and the laser cutter for cutting the deck. I was going to go all-in.
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/iidx-deck.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-deck.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/iidx-deck.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-deck.jpg)
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/iidx-deck-open.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-deck-open.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/iidx-deck-open.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-deck-open.jpg)
 
 
 I made a sketchup file for my design (download at the bottom) based on these dimensions for the arcade controller I found online.
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/iidx-keys.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-keys.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/iidx-keys.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-keys.jpg)
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/iidx-layout.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-layout.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/iidx-layout.jpg)](/files/iidx_deck_-_build_log_-_part_1/iidx-layout.jpg)
 
 
 With that out of the way, I set to work on the woodworking. I planed a bunch of oak first, and left it to sit for a long while in my shop before beginning work in earnest.
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/2015-09-22-19.37.37.jpg)](/files/iidx_deck_-_build_log_-_part_1/2015-09-22-19.37.37.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/2015-09-22-19.37.37.jpg)](/files/iidx_deck_-_build_log_-_part_1/2015-09-22-19.37.37.jpg)
 
 
-[![](/files/iidx_deck_-_build_log_-_part_1/2015-09-26-20.14.07.jpg)](/files/iidx_deck_-_build_log_-_part_1/2015-09-26-20.14.07.jpg)
+[![](/thumbs/files/iidx_deck_-_build_log_-_part_1/2015-09-26-20.14.07.jpg)](/files/iidx_deck_-_build_log_-_part_1/2015-09-26-20.14.07.jpg)
 
 
 <div class="post-files">

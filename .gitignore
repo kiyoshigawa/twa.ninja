@@ -4,3 +4,6 @@ node_modules/
 old_website_files/
 old_website_files/lib/
 public/
+
+# Auto-generated image thumbnails (regenerated on every build)
+website/static/thumbs/

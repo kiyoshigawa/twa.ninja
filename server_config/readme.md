@@ -201,3 +201,13 @@ ansible-playbook update.yaml -i inventory
 ```
 
 This pulls the latest commit, rebuilds the site, and restarts nginx.
+
+## Local Testing
+
+To build and preview the site locally, run the helper script from the repo root. It generates thumbnails, builds the site with Zola, and starts a test server.
+
+```sh
+./generate_local_test_site.sh [output_dir] [port]
+```
+
+Defaults: output goes to `~/code/twa.ninja/public/` and serves on port 8000. Requires [mise](https://mise.jdx.dev) — run `mise install` from the repo root first if you haven't already.

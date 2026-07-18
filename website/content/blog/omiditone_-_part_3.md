@@ -15,14 +15,28 @@ The State of the oMIDItone:
 
 In my [last blog post](/blog/omiditone_-_part_2) I mentioned that I would be designing a new 6-head oMIDItone PCB which would take all that I had learned when initially getting the MIDI-controlled Otamatone circuitry working. I have since completed this new 6-headed oMIDItone PCB. In addition to being able to make all 6 heads output audio at once, this PCB allows me to use some face-grabbers with servo motors to open the mouths of the Otamatone heads as notes play, and it has fancy LED lighting effects that are triggered by the MIDI notes sent to the device. The design for the controller PCB is available at the bottom of this post for download (and it's also in the [GitHub repo](https://github.com/kiyoshigawa/oMIDItone_Controller_V2)). It requires a teensy 3.2 to run everything, and those aren't the easiest devices to get your hands on at the moment, unfortunately. Looking at the PCB, I noticed that I also ended up soldering in discreet transistors instead of using the optoisolator chips for some reason. I don't remember if it was because the optoisolator chips weren't able to switch fast enough, or if I just didn't have them on hand and wanted things working ASAP. Regardless of the reasons, the discreet transistors are working as intended in place of the optoisolators, so I will likely use them on any future revisions as they cost a fair bit less.
 
-[![](/thumbs/files/omiditone_-_part_3/pcb_closeup.jpg)](/files/omiditone_-_part_3/pcb_closeup.jpg)
+<a class="image_link" target="_blank" href="/files/omiditone_-_part_3/pcb_closeup.jpg">
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/pcb_closeup.jpg" title="" alt="">
+</a>
 
 The new PCB layout integrates the original Otamatone head control PCBs directly into its design. You need to solder a total of 5 wires onto the PCB in order to connect it to the headers in the PCB I created for this project. You also need to remove the thermistor that is being used as a thermal fuse from the battery connector and solder it onto the PCB or the heads can burn out their transistors and/or speakers. This thermistor is hidden in the very front of the plastic Otamatone housing, and it can be easily missed if you don't disassemble the entire head. You can see where the wires attach to the original Otamatone PCBs I am using in the photos below. Note that I've also included some photos of a newer revision of the Otamatone PCB below, though without the wiring. You will still need to attach the 5 wires to appropriate points on the new PCB. These new PCBs also have SMD thermistors soldered directly onto them, so if you use them you won't need to disassemble the battery enclosure to get your hands on the thermistor like I did with my older PCBs. The new PCBs also have a fancy plug-in connector for the two resistor pins, so you could re-use that connector for your wiring if you wanted.
 
-[![](/thumbs/files/omiditone_-_part_3/oMIDItone_pcb_wiring_front.png)](/files/omiditone_-_part_3/oMIDItone_pcb_wiring_front.png) [![](/thumbs/files/omiditone_-_part_3/oMIDItone_pcb_wiring_back.png)](/files/omiditone_-_part_3/oMIDItone_pcb_wiring_back.png)
+<a class="image_link" target="_blank" href="/files/omiditone_-_part_3/oMIDItone_pcb_wiring_front.png">
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/oMIDItone_pcb_wiring_front.png" title="" alt="">
+</a>
+
+<a class="image_link" target="_blank" href="/files/omiditone_-_part_3/oMIDItone_pcb_wiring_back.png">
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/oMIDItone_pcb_wiring_back.png" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/omiditone_-_part_3/new_pcb_front.png)](/files/omiditone_-_part_3/new_pcb_front.png) [![](/thumbs/files/omiditone_-_part_3/new_pcb_back.png)](/files/omiditone_-_part_3/new_pcb_back.png)
+<a class="image_link" target="_blank" href="/files/omiditone_-_part_3/new_pcb_front.png">
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/new_pcb_front.png" title="" alt="">
+</a>
+
+<a class="image_link" target="_blank" href="/files/omiditone_-_part_3/new_pcb_back.png">
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/new_pcb_back.png" title="" alt="">
+</a>
 
 You can see a video of the whole device working here:
 
@@ -36,7 +50,9 @@ You may have also noticed that everything is built into a nice enclosure. I've g
 
 Another fun thing about the current design is that it currently requires three separate power supplies. I've got a big metal boxy 5V power supply that is being used to power the LED lighting and servo motors, as well as a small switching mode power supply that is powering all 6 heads' analog circuitry (to keep the noise of the motors out of the audio oscillator circuit), and finally the teensy 3.2 (and subsequently the hardware MIDI board) is powered directly via a USB connection. This results in a big tangled mess of cords that sit behind the neat-looking box where the heads reside. You need to plug in all three of these power supplies every time you want to use the oMIDItone in its current form.
 
-[![](/thumbs/files/omiditone_-_part_3/oMIIDItone_wiring_rats_nest.png)](/files/omiditone_-_part_3/oMIIDItone_wiring_rats_nest.png)
+<a class="image_link" target="_blank" href="/files/omiditone_-_part_3/oMIIDItone_wiring_rats_nest.png">
+<img class="post-image" src="/thumbs/files/omiditone_-_part_3/oMIIDItone_wiring_rats_nest.png" title="" alt="">
+</a>
 
 All the aforementioned problems aside, the oMIDItone v2 is more-or-less fully functional at this point, and the setup works with both software MIDI over the teensy's USB connection and hardware MIDI inputs from the expansion board I've attached to the PCB on the back. The lighting effects and servo animations can be controlled via MIDI control codes, and the device plays any MIDI files you feed it, though how it sounds is highly dependent on the file and how many harmonies it's attempting to play at once.
 

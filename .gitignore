@@ -5,5 +5,9 @@ old_website_files/
 old_website_files/lib/
 public/
 
+# Local OpenTofu/Terraform config (machine-specific)
+server_config/tf/.terraformrc
+tofu-codesign.conf
+
 # Auto-generated image thumbnails (regenerated on every build)
 website/static/thumbs/

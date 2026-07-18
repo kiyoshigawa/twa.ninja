@@ -26,20 +26,15 @@ You will note that the date format is just a string, formatted YYYY-MM-DD, and t
 The images and files used in the blog post are located in the `website/static/files/` directory. I have put them into subfolders that match the blog post slug. They can be referred to in posts under the path format `/files/<blog_slug>/<filename.ext>`. This file storage location is not a requirement of the zola engine, it is just a convention I have adopted to keep things somewhat organized.
 
 My old blog (2 versions ago) had an automated process for adding images and files at the end of posts, which I manually converted for the javascript version into html. For this current version, I have kept the html formatting for adding images and files to the end of posts, but it must be manually added to the .md file for the blog post. The html tag formats for image and file attachments to blog posts are as follows: 
+The html tag formats for image and file attachments to blog posts are as follows. Note that the images also support a click-to-open modal via JavaScript. 
 
 ```html
 <div class="post-images">
-    <div class="post-image-holder">
-        <a class="image_link" 
-           target="_blank" 
-           href="/files/{blog_slug}/{image_name.ext}">
-            <img class="post-image" 
-                 src="/thumbs/files/{blog_slug}/{image_name.ext}" 
-                 title="{Image Title Text}" 
-                 alt="{Image Alt Text}">
-        </a>
-    </div>
-    {multiple post-image-holder divs can be added here to show multiple images}
+<div class="post-image-holder">
+<a class="image_link" target="_blank" href="/files/{blog_slug}/{image_name.ext}">
+<img class="post-image" src="/thumbs/files/{blog_slug}/{image_name.ext}" title="{Image Title Text}" alt="{Image Alt Text}"></a>
+</div>
+{multiple post-image-holder divs can be added here to show multiple images}
 </div>
 ```
 ```html

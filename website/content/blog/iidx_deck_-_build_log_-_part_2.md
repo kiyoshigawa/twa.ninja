@@ -14,43 +14,65 @@ blurb = " This part will cover the actual physical build of the deck mostly the 
 Step 1 was to laminate the oak pieces that would form the top.
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2016-05-21-16.55.04.jpg)](/files/iidx_deck_-_build_log_-_part_2/2016-05-21-16.55.04.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2016-05-21-16.55.04.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2016-05-21-16.55.04.jpg" title="" alt="">
+</a>
 
 
 I had also at some point since planing the wood back in 2015 laser cut all the plexiglass bits that would form the deck top. I laid them out as precisely as I could on the laminated top, and then did some drilling and shallow mortisework to get it button-ready. This phase took me from 2016 into 2017, due to life obligations, adopting an 8 month old German Shepherd named Ziggy, and just not having a ton of time or motivaton to work on it.
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2016-05-22-11.49.14.jpg)](/files/iidx_deck_-_build_log_-_part_2/2016-05-22-11.49.14.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2016-05-22-11.49.14.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2016-05-22-11.49.14.jpg" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-09-30-07.45.00.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-09-30-07.45.00.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-09-30-07.45.00.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-09-30-07.45.00.jpg" title="" alt="">
+</a>
 
 
 After the top was ready, I had to make the dovetailed box with panel and frame bottom. See below for several pics of this process.
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-09-30-20.23.04.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-09-30-20.23.04.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-09-30-20.23.04.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-09-30-20.23.04.jpg" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.17.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.17.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.17.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.17.jpg" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.24.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.24.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.24.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-06-17.29.24.jpg" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-09-19.59.56.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-09-19.59.56.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-10-09-19.59.56.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-09-19.59.56.jpg" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-09-20.10.58.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-09-20.10.58.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-10-09-20.10.58.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-09-20.10.58.jpg" title="" alt="">
+</a>
 
 
 It looks more warped than it was in this pic. Not sure why. I glued up the dovetail section and patched some of the tails as needed.
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-12-17.40.15.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-12-17.40.15.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-10-12-17.40.15.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-12-17.40.15.jpg" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.28.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.28.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.28.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.28.jpg" title="" alt="">
+</a>
 
 
-[![](/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.36.jpg)](/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.36.jpg)
+<a class="image_link" target="_blank" href="/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.36.jpg">
+<img class="post-image" src="/thumbs/files/iidx_deck_-_build_log_-_part_2/2017-10-13-21.11.36.jpg" title="" alt="">
+</a>
